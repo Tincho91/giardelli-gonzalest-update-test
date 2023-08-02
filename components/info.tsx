@@ -9,9 +9,10 @@ import { Work } from "@/types";
 interface InfoProps {
   data: Work;
   onClose?: () => void;
+  isShortDescription?: boolean;
 };
 
-const Info: React.FC<InfoProps> = ({ data, onClose }) => {
+const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -21,17 +22,17 @@ const Info: React.FC<InfoProps> = ({ data, onClose }) => {
     }
   };
 
-  return ( 
+  return (
     <div>
       <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
       <div className="mt-3 flex items-end justify-between">
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-y-6">
-      <div className="flex items-center gap-x-4">
+        <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Descripción:</h3>
           <div>
-            {data?.shortDescription}
+            {isShortDescription ? data?.shortDescription : data?.longDescription}
           </div>
         </div>
         <div className="flex items-center gap-x-4">
@@ -56,5 +57,5 @@ const Info: React.FC<InfoProps> = ({ data, onClose }) => {
     </div>
   );
 }
- 
+
 export default Info;

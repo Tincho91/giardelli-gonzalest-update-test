@@ -4,7 +4,7 @@ export interface Work {
   name: string;
   isFeatured: boolean;
   shortDescription: string;
-  longDescription: Text;
+  longDescription: string;
   technology: Technology;
   company: Company;
   availability: Availability;
