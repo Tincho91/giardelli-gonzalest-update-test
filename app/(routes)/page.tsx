@@ -6,7 +6,7 @@ const HomePage = async () => {
 
   return (
     <Container>
-      <h3 className="font-bold text-3xl">GIARDELLI-GONZALES</h3> 
+      <h3 className="font-bold text-3xl">GIARDELLI-GONZALES DEMO</h3> 
     </Container>
   )
 };
