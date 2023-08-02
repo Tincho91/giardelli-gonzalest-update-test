@@ -7,14 +7,16 @@ import Button from "@/components/ui/button";
 import { Work } from "@/types";
 
 interface InfoProps {
-  data: Work
+  data: Work;
+  onClose: () => void;
 };
 
-const Info: React.FC<InfoProps> = ({ data }) => {
+const Info: React.FC<InfoProps> = ({ data, onClose }) => {
   const router = useRouter();
 
   const handleClick = () => {
     router.push(`/work/${data?.id}`);
+    onClose();
   };
 
   return ( 
@@ -24,6 +26,12 @@ const Info: React.FC<InfoProps> = ({ data }) => {
       </div>
       <hr className="my-4" />
       <div className="flex flex-col gap-y-6">
+      <div className="flex items-center gap-x-4">
+          <h3 className="font-semibold text-black">Descripción:</h3>
+          <div>
+            {data?.shortDescription}
+          </div>
+        </div>
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">Categoría:</h3>
           <div>
