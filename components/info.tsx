@@ -8,7 +8,7 @@ import { Work } from "@/types";
 
 interface InfoProps {
   data: Work;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
 const Info: React.FC<InfoProps> = ({ data, onClose }) => {
@@ -16,7 +16,9 @@ const Info: React.FC<InfoProps> = ({ data, onClose }) => {
 
   const handleClick = () => {
     router.push(`/work/${data?.id}`);
-    onClose();
+    if (onClose) {
+      onClose();
+    }
   };
 
   return ( 
