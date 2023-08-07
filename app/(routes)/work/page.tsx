@@ -35,7 +35,7 @@ const WorksPage: React.FC<WorksPageProps> = async ({
   const technologies = await getTechnologies();
 
   return (
-    <div className="bg-white"> 
+    <div className=""> 
       <Container>
         <Billboard />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">

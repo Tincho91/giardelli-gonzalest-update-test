@@ -18,6 +18,11 @@ export function MainNav({
       label: 'Trabajos',
       active: pathname === `/work`,
     },
+    {
+      href: `/cv`,
+      label: 'Sube tu CV',
+      active: pathname === `/cv`,
+    },
 
   ]
 

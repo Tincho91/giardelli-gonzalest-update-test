@@ -42,3 +42,12 @@ export interface Location {
   name: string;
 };
 
+export interface User {
+  id: string;
+  clerkId: string;
+  name: string;
+  email: string;
+  cvUrl?: string;
+  phoneNumber?: number;
+}
+
