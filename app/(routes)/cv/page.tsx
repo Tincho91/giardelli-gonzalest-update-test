@@ -7,10 +7,12 @@ import { useUser } from '@clerk/clerk-react';
 import CVUploadComponent from '@/components/CVUploadComponent';
 import getUsers from '@/actions/get-users';
 
-const CVPage: React.FC = () => {
+const CVPage: React.FC = async () => {
   const [existingCV, setExistingCV] = useState<string | null>(null);
   const { user } = useUser();
   const clerkUserId = user?.id;
+
+  console.log(clerkUserId)
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -30,21 +32,24 @@ const CVPage: React.FC = () => {
   }, [clerkUserId]);
 
   const handleCVUpload = async (cvUrl: string) => {
+    const organizationId = "your_organization_id"; // You'd need a way to get this
+  
     if (existingCV) {
-      // Update existing user CV URL
-      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/users/${clerkUserId}`, { cvUrl });
+      // Update existing user CV URL using PATCH
+      await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/${organizationId}/users/${clerkUserId}`, { cvUrl });
     } else {
       // Create new user record with clerkId, CV URL, name, and email
       await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users`, { 
         clerkId: clerkUserId, 
         cvUrl, 
         name: user?.fullName, 
-        email: user?.primaryEmailAddress  // updated the property to `emailAddress` based on Clerk's User type
+        email: user?.primaryEmailAddress?.emailAddress,
       });
     }
-
+    
     setExistingCV(cvUrl);
   };
+  
 
   return (
     <div>
