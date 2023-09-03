@@ -33,7 +33,7 @@ const PositionsPage: React.FC<PositionsPageProps> = async ({
   return (
     <div className=""> 
       <Container>
-        <Billboard />
+        <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5 my-5">BÚSQUEDAS ACTIVAS</h1>
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
           <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
             <MobileFilters modalities={modalities} areasOfInterest={areasOfInterest} />

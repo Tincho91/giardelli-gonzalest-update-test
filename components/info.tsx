@@ -9,6 +9,7 @@ import { User } from '@/types';
 import { useUser } from '@clerk/clerk-react';
 import { Button } from "./ui/button";
 import { Position } from "@/types";
+import { Separator } from '@/components/ui/separator';
 import getUsers from "@/actions/get-users";
 
 interface InfoProps {
@@ -40,7 +41,6 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
           positionId: data?.id
         };
   
-        // Using userId instead of clerkUserId in the URL
         const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/users/${currentUserData.id}`, formData);
   
         if (response.status === 200) {
@@ -58,13 +58,9 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
     }
   };
 
-  console.log(currentUserData);
-
   const hasApplied = currentUserData?.applications?.some(
     (app) => app.positionId === data?.id
   );
-
-
 
   return (
     <div className=''>
@@ -92,19 +88,22 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
           </div>
         </div>
       </div>
+
+      <Separator className='mt-3'/>
+
       <div className="mt-10 flex items-center gap-x-3">
         { currentUserData ? (
           hasApplied ? (
             <div>Tu aplicación está en revisión</div>
           ) : (
             <Button onClick={handleApplyClick} className="flex items-center gap-x-2">
-              Apply
+              Aplicar
               <LogIn size={20} />
             </Button>
           )
         ) : (
           <div>
-            Primero debes completar tu perfil<a href="/cv"><p>AQUÍ</p></a>
+            Primero debes completar tu perfil<a href="/cv"><Button className='ml-3'>AQUÍ</Button></a>
           </div>
         )}
       </div>

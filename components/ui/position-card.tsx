@@ -12,8 +12,6 @@ const PositionCard: React.FC<PositionCard> = ({
 }) => {
   const router = useRouter();
 
-  console.log(data)
-
   const handleClick = () => {
     router.push(`/positions/${data.id}`);
   };

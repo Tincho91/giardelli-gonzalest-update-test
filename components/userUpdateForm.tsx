@@ -1,71 +1,142 @@
-"use client";
+import React, { useState, FormEvent } from 'react';
+import axios from 'axios';
+import { CldUploadWidget } from 'next-cloudinary';
+import toast from 'react-hot-toast';
+import Spinner from './ui/spinner';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
+import Container from './ui/container';
 
-import React, { useEffect, useState } from 'react';
-import { Clipboard } from 'lucide-react';
-import getPosition from '@/actions/get-position';
-import { User, Position } from "@/types";
-import Spinner from '@/components/ui/Spinner';
+interface UploadResult {
+  info?: {
+    url?: string;
+  };
+}
 
 interface UserUpdateFormProps {
-  user: User;
+  user: any;
 }
 
 const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
-  const [positions, setPositions] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(true); // Add a loading state
+  const [name, setName] = useState(user.name || '');
+  const [email, setEmail] = useState(user.email || '');
+  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber || '');
+  const [linkedinUrl, setLinkedinUrl] = useState(user.linkedinUrl || '');
+  const [cvUrl, setCvUrl] = useState(user.cvUrl || '');
+  const [isCVUploaded, setIsCVUploaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchPositions = async () => {
-      setLoading(true); // Set loading to true when fetching starts
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/users/${user.id}`;
 
-      if (user.applications) {
-        const positionPromises = user.applications.map(async (app) => {
-          const position: Position = await getPosition(app.positionId);
-          return { id: app.positionId, name: position.name };
-        });
+  const onUpload = (result: UploadResult) => {
+    if (result.info && result.info.url) {
+      setCvUrl(result.info.url);
+      setIsCVUploaded(true);
+    }
+  };
 
-        const fetchedPositions = await Promise.all(positionPromises);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-        const positionMap: Record<string, string> = {};
+    try {
+      const response = await axios.patch(apiUrl, {
+        name,
+        email,
+        phoneNumber,
+        linkedinUrl,
+        cvUrl,
+      });
 
-        fetchedPositions.forEach((pos) => {
-          positionMap[pos.id] = pos.name;
-        });
-
-        setPositions(positionMap);
-      }
-
-      setLoading(false);
-    };
-
-    fetchPositions();
-  }, [user.applications]);
+      toast.success('User updated successfully!');
+    } catch (error) {
+      toast.error('Error updating user.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
-    <div>
-      <h1>Hola!, {user.name}</h1>
-      <div>
-        Your email: {user.email}
+    <Container>
+      <div className="relative flex flex-col justify-center my-5">
+        <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5">Actualizar Perfil</h1>
+        <div className="w-full max-w-[1400px] border mx-auto rounded-md p-8">
+          <form onSubmit={handleSubmit} className="space-y-4 w-full mx-auto md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="name" className="text-left w-full">Nombre</label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="email" className="text-left w-full">Email</label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="phoneNumber" className="text-left w-full">Teléfono</label>
+              <Input
+                id="phoneNumber"
+                type="tel"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="linkedinUrl" className="text-left w-full">LinkedIn (opcional)</label>
+              <Input
+                id="linkedinUrl"
+                type="url"
+                placeholder="LinkedIn"
+                value={linkedinUrl}
+                onChange={(e) => setLinkedinUrl(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <CldUploadWidget uploadPreset="d2obllus" onUpload={onUpload}>
+                {({ open }) => (
+                  <Button
+                    type="button"
+                    onClick={(e) => open()}
+                    className="w-full rounded-md px-4 py-2"
+                  >
+                    ACTUALIZAR CV
+                  </Button>
+                )}
+              </CldUploadWidget>
+              {isCVUploaded && <p className="text-green-600">CV uploaded successfully!</p>}
+            </div>
+            <div className="md:col-span-2">
+              <Button
+                type="submit"
+                className="w-full rounded-md px-4 py-2"
+              >
+                {isLoading ? <Spinner /> : 'ACTUALIZAR PERFIL'}
+              </Button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div className='flex'>
-        CV: <a href={user.cvUrl} target="_blank" rel="noopener noreferrer"><Clipboard /></a>
-      </div>
-      <div>
-        Trabajos a los que aplicaste:
-        {loading ? (
-          <Spinner />  // Show Spinner if loading
-        ) : (
-          <ul>
-            {user.applications?.map((app) => (
-              <li key={app.id}>
-                - {positions[app.positionId] || 'Loading...'} - Status: {app.status}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
+    </Container>
   );
 };
+
 
 export default UserUpdateForm;

@@ -6,8 +6,10 @@ import { CldUploadWidget } from 'next-cloudinary';
 import { Upload } from 'lucide-react';
 import toast from 'react-hot-toast';
 
+import { Input } from './ui/input';
 import { Button } from '@/components/ui/button';
-import Spinner from '@/components/ui/Spinner';
+import Spinner from '@/components/ui/spinner';
+import Container from './ui/container';
 
 interface UploadResult {
   info?: {
@@ -68,27 +70,85 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <input type="tel" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
-      <input type="url" placeholder="LinkedIn URL (optional)" value={linkedinUrl} onChange={(e) => setLinkedinUrl(e.target.value)} />
-
-      <CldUploadWidget onUpload={onUpload} uploadPreset="d2obllus">
-        {({ open }) => (
-          <Button type="button" onClick={(e) => open()}>
-            <Upload className="h-4 w-4 mr-2" />
-            Upload your CV
-          </Button>
-        )}
-      </CldUploadWidget>
-
-      {isCVUploaded && <p>CV uploaded successfully!</p>}
-
-      <Button type="submit">
-        {isLoading ? <Spinner /> : 'Submit'}
-      </Button>
-    </form>
+    <Container>
+      <div className="relative flex flex-col justify-center my-5">
+        <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5">Crear Perfil</h1>
+        <div className="w-full max-w-[1400px] border mx-auto rounded-md p-8">
+          <form onSubmit={handleSubmit} className="space-y-4 w-full mx-auto md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="name" className="text-left w-full">Nombre</label>
+              <Input
+                id="name"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="email" className="text-left w-full">Email</label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="phoneNumber" className="text-left w-full">Teléfono</label>
+              <Input
+                id="phoneNumber"
+                type="tel"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+                required
+              />
+            </div>
+            <div className="relative flex flex-col items-center justify-center md:mt-0">
+              <label htmlFor="linkedinUrl" className="text-left w-full">LinkedIn (opcional)</label>
+              <Input
+                id="linkedinUrl"
+                type="url"
+                placeholder="LinkedIn"
+                value={linkedinUrl}
+                onChange={(e) => setLinkedinUrl(e.target.value)}
+                className="w-full border rounded-md px-4 py-2"
+              />
+            </div>
+            <div className="md:col-span-2">
+              <CldUploadWidget uploadPreset="d2obllus" onUpload={onUpload}>
+                {({ open }) => (
+                  <Button
+                    type="button"
+                    onClick={(e) => open()}
+                    className="w-full rounded-md px-4 py-2"
+                  >
+                    <Upload className="h-4 w-4 mr-2" />
+                    SUBIR CV
+                  </Button>
+                )}
+              </CldUploadWidget>
+              {isCVUploaded && <p className="text-green-600">CV uploaded successfully!</p>}
+            </div>
+            <div className="md:col-span-2">
+              <Button
+                type="submit"
+                className="w-full rounded-md px-4 py-2"
+              >
+                {isLoading ? <Spinner /> : 'CREAR PERFIL'}
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </Container>
   );
 };
 

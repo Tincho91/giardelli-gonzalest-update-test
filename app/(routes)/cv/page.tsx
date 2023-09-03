@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
 import { User } from '@/types';
 import { useUser } from '@clerk/clerk-react';
-import Spinner from '@/components/ui/Spinner';
+import Spinner from '@/components/ui/spinner';
 import getUsers from '@/actions/get-users';
 import UserUpdateForm from '@/components/userUpdateForm';
 import UserUploadForm from '@/components/userUploadForm';

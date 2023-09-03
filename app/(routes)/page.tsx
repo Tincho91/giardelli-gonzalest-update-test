@@ -6,7 +6,7 @@ const HomePage = () => {
 
   return (
     <Container>
-      <h3 className="font-bold text-3xl">GIARDELLI-GONZALES DEMO</h3>
+      <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5 my-5">GIARDELLI GONZALEZ - DEMO 2</h1>
     </Container>
   )
 };
