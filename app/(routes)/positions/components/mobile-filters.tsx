@@ -6,19 +6,17 @@ import { Dialog } from "@headlessui/react";
 
 import IconButton  from "@/components/ui/icon-button";
 import { Button } from "@/components/ui/button";
-import { Technology, Modality, Category } from "@/types";
+import { AreaOfInterest, Modality } from "@/types";
 
 import Filter from "./filter";
 
 interface MobileFiltersProps {
-  categories: Category[]
-  technologies: Technology[],
+  areasOfInterest: AreaOfInterest[],
   modalities: Modality[],
 }
 
 const MobileFilters: React.FC<MobileFiltersProps> = ({
-  categories,
-  technologies,
+  areasOfInterest,
   modalities
 }) => {
   const [open, setOpen] = useState(false);
@@ -32,18 +30,19 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
         onClick={onOpen}
         className="flex items-center gap-x-2 lg:hidden"
       >
-        Filters
+        Filtros
         <Plus size={20} />
       </Button>
 
-      <Dialog open={open} as="div" className="relative z-40 lg:hidden" onClose={onClose}>
+      <Dialog open={open} as="div" className="relative z-40 lg:hidden" onClose={onClose}> 
         
         {/* Background color and opacity */}
         <div className="fixed inset-0 bg-black bg-opacity-25" />
         
         {/* Dialog position */}
         <div className="fixed inset-0 z-40 flex">
-          <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl">
+        <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto py-4 pb-6 shadow-xl bg-background">
+
             
             {/* Close button */}
             <div className="flex items-center justify-end px-4">
@@ -52,14 +51,9 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
 
             <div className="p-4">
               <Filter
-                valueKey="categoryId" 
-                name="Categorías"
-                data={categories}
-              />
-              <Filter
-                valueKey="technologyId" 
-                name="Technologies" 
-                data={technologies}
+                valueKey="areaOfInterestId" 
+                name="Área de Interés" 
+                data={areasOfInterest}
               />
               <Filter 
                 valueKey="modalityId" 

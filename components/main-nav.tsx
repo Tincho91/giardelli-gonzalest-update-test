@@ -14,13 +14,13 @@ export function MainNav({
 
   const routes = [
     {
-      href: `/work`,
-      label: 'Trabajos',
-      active: pathname === `/work`,
+      href: `/positions`,
+      label: 'PUESTOS',
+      active: pathname === `/positions`,
     },
     {
       href: `/cv`,
-      label: 'Sube tu CV',
+      label: 'TU CV',
       active: pathname === `/cv`,
     },
 

@@ -1,13 +1,13 @@
-import WorkCard from "@/components/ui/work-card";
-import { Work } from "@/types";
+import PositionCard from "@/components/ui/position-card";
+import { Position } from "@/types";
 import NoResults from "@/components/ui/no-results";
 
-interface WorkListProps {
+interface PositionListProps {
   title: string;
-  items: Work[]
+  items: Position[]
 }
 
-const WorkList: React.FC<WorkListProps> = ({
+const PositionList: React.FC<PositionListProps> = ({
   title,
   items
 }) => {
@@ -17,11 +17,11 @@ const WorkList: React.FC<WorkListProps> = ({
       {items.length === 0 && <NoResults />}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {items.map((item) => (
-          <WorkCard key={item.id} data={item} />
+          <PositionCard key={item.id} data={item} />
         ))}
       </div>
     </div>
    );
 }
  
-export default WorkList;
+export default PositionList;

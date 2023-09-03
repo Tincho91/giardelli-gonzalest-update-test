@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 
-import { Work } from '@/types';
+import { Position } from '@/types';
 
-interface PreviewModalStore {
+interface PreviewModalPosition {
   isOpen: boolean;
-  data?: Work;
-  onOpen: (data: Work) => void;
+  data?: Position;
+  onOpen: (data: Position) => void;
   onClose: () => void;
 }
 
-const usePreviewModal = create<PreviewModalStore>((set) => ({
+const usePreviewModal = create<PreviewModalPosition>((set) => ({
   isOpen: false,
   data: undefined,
-  onOpen: (data: Work) => set({ isOpen: true, data }),
+  onOpen: (data: Position) => set({ isOpen: true, data }),
   onClose: () => set({ isOpen: false }),
 }));
 

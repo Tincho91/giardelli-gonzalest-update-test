@@ -5,10 +5,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Technology, Modality } from "@/types";
+import { Modality, AreaOfInterest } from "@/types";
 
 interface FilterProps {
-  data: (Modality | Technology)[];
+  data: (Modality | AreaOfInterest)[]; 
   name: string;
   valueKey: string;
 };

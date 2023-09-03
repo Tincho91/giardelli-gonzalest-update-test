@@ -1,23 +1,17 @@
-export interface Work {
+export interface Position {
   id: string;
-  category: Category;
+  areaOfInterest: AreaOfInterest;
   name: string;
   isFeatured: boolean;
   shortDescription: string;
   longDescription: string;
-  technology: Technology;
   company: Company;
   availability: Availability;
   modality: Modality;
   location: Location;
 };
 
-export interface Category {
-  id: string;
-  name: string;
-};
-
-export interface Technology {
+export interface AreaOfInterest {
   id: string;
   name: string;
 };
@@ -49,5 +43,23 @@ export interface User {
   email: string;
   cvUrl?: string;
   phoneNumber?: number;
+  linkedinUrl?: string;
+  applications?: UserApplication[];
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
+export enum ApplicationStatus {
+  APPROVED = 'APPROVED',
+  DISAPPROVED = 'DISAPPROVED',
+  HOLD = 'HOLD'
+}
+
+export interface UserApplication {
+  id: string;
+  userId: string;
+  positionId: string;
+  status: ApplicationStatus;
+  createdAt: Date;
+  updatedAt: Date;
+}
