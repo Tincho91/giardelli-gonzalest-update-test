@@ -32,7 +32,7 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
     };
   
     fetchUsers();
-  }, [user]);
+  }, [user, clerkUserId]);
 
   const handleApplyClick = async () => {
     try {
