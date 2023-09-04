@@ -1,5 +1,6 @@
+"use client";
+
 import Container from '@/components/ui/container';
-import Billboard from '@/components/ui/billboard';
 import PositionCard from '@/components/ui/position-card';
 import NoResults from '@/components/ui/no-results';
 

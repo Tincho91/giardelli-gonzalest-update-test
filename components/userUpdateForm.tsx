@@ -1,6 +1,9 @@
-import React, { useState, FormEvent } from 'react';
+"use client"
+
+import React, { useState, FormEvent, useEffect } from 'react';
 import axios from 'axios';
 import { CldUploadWidget } from 'next-cloudinary';
+import getPosition from '@/actions/get-position';
 import toast from 'react-hot-toast';
 import Spinner from './ui/spinner';
 import { Input } from './ui/input';
@@ -56,8 +59,27 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
     }
   };
 
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'HOLD':
+        return 'bg-blue-500';
+      case 'APPROVED':
+        return 'bg-green-500';
+      case 'DISAPPROVED':
+        return 'bg-red-500';
+      default:
+        return 'bg-gray-500';
+    }
+  };
+
+  const fetchPositionName = async (positionId: string) => {
+    const position = await getPosition(positionId);
+    return position.name;
+  };
+
   return (
     <Container>
+
       <div className="relative flex flex-col justify-center my-5">
         <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5">Actualizar Perfil</h1>
         <div className="w-full max-w-[1400px] border mx-auto rounded-md p-8">
@@ -134,6 +156,34 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
           </form>
         </div>
       </div>
+
+      <div className="relative flex flex-col justify-center my-5">
+        <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5">Empleos Aplicados</h1>
+        <div className="w-full max-w-[1400px] border mx-auto rounded-md p-8">
+          {user.applications.map((application: any) => {
+            const [positionName, setPositionName] = useState<string | null>(null);
+
+            useEffect(() => {
+              fetchPositionName(application.positionId).then(setPositionName);
+            }, [application.positionId]);
+
+            return (
+              <div key={application.id} className="flex space-x-4 mb-4">
+                <Button type="button" className={`w-1/3 rounded-md px-4 py-2`}>
+                  {positionName || <Spinner />}
+                </Button>
+                <Button type="button" className={`w-1/3 rounded-md px-4 py-2 ${getStatusColor(application.status)}`}>
+                  {application.status}
+                </Button>
+                <Button type="button" className="w-1/3 rounded-md px-4 py-2 bg-red-500">
+                  Cancelar Postulación
+                </Button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
     </Container>
   );
 };
