@@ -31,7 +31,7 @@ const CVPage: React.FC = () => {
   }, [user]);
   
   if (loading) {
-    return <Spinner />;
+    return <div className='h-full flex justify-center items-center'> <Spinner /> </div>;
   }
   
   return currentUserData ? <UserUpdateForm user={currentUserData} /> : <UserUploadForm initialUserData={user?.id ?? ""} />;

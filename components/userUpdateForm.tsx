@@ -5,10 +5,12 @@ import axios from 'axios';
 import { CldUploadWidget } from 'next-cloudinary';
 import getPosition from '@/actions/get-position';
 import toast from 'react-hot-toast';
-import Spinner from './ui/spinner';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
-import Container from './ui/container';
+
+import Spinner from '@/components/ui/spinner';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import Container from '@/components/ui/container';
+import ApplicationItem from '@/components/applicationItem';
 
 interface UploadResult {
   info?: {
@@ -160,27 +162,9 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
       <div className="relative flex flex-col justify-center my-5">
         <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5">Empleos Aplicados</h1>
         <div className="w-full max-w-[1400px] border mx-auto rounded-md p-8">
-          {user.applications.map((application: any) => {
-            const [positionName, setPositionName] = useState<string | null>(null);
-
-            useEffect(() => {
-              fetchPositionName(application.positionId).then(setPositionName);
-            }, [application.positionId]);
-
-            return (
-              <div key={application.id} className="flex space-x-4 mb-4">
-                <Button type="button" className={`w-1/3 rounded-md px-4 py-2`}>
-                  {positionName || <Spinner />}
-                </Button>
-                <Button type="button" className={`w-1/3 rounded-md px-4 py-2 ${getStatusColor(application.status)}`}>
-                  {application.status}
-                </Button>
-                <Button type="button" className="w-1/3 rounded-md px-4 py-2 bg-red-500">
-                  Cancelar Postulación
-                </Button>
-              </div>
-            );
-          })}
+          {user.applications.map((application: any) => (
+            <ApplicationItem key={application.id} application={application} />
+          ))}
         </div>
       </div>
 
