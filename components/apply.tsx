@@ -9,16 +9,15 @@ import { User } from '@/types';
 import { useUser } from '@clerk/clerk-react';
 import { Button } from "./ui/button";
 import { Position } from "@/types";
-import { Separator } from '@/components/ui/separator';
 import getUsers from "@/actions/get-users";
 
-interface InfoProps {
+interface ApplyProps {
   data: Position;
   onClose?: () => void;
   isShortDescription?: boolean;
 }
 
-const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
+const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
   const [currentUserData, setCurrentUserData] = useState<User | null>(null);
   const router = useRouter();
   const { user } = useUser();
@@ -45,7 +44,7 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
   
         if (response.status === 200) {
           toast.success("Successfully applied for the position.");
-          router.push(`/positions/${data.id}`);
+          window.location.reload();
         } else {
           toast.error("Failed to apply for the position.");
         }
@@ -63,47 +62,20 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
   );
 
   return (
-    <div className=''>
-      <h1 className="text-3xl font-bold ">{data.name}</h1>
-      <div className="mt-3 flex items-end justify-between">
-      </div>
-      <hr className="my-4" />
-      <div className="flex flex-col gap-y-6">
-        <div className="flex items-center gap-x-4">
-          <h3 className="font-semibold ">Descripción:</h3>
-          <div>
-            {isShortDescription ? data?.shortDescription : data?.longDescription}
-          </div>
-        </div>
-        <div className="flex items-center gap-x-4">
-          <h3 className="font-semibold ">Categoría:</h3>
-          <div>
-            {data?.areaOfInterest?.name}
-          </div>
-        </div>
-        <div className="flex items-center gap-x-4">
-          <h3 className="font-semibold ">Empresa:</h3>
-          <div>
-            {data?.company?.name}
-          </div>
-        </div>
-      </div>
-
-      <Separator className='mt-3'/>
-
-      <div className="mt-10 flex items-center gap-x-3">
+    <div className='flex align-middle'>
+      <div className="flex items-center gap-x-3 align-middle">
         { currentUserData ? (
           hasApplied ? (
-            <div>Tu aplicación está en revisión</div>
+            <div><p className='text-customBlue text-bold'>Tu aplicación está en revisión</p></div>
           ) : (
-            <Button onClick={handleApplyClick} className="flex items-center gap-x-2">
+            <Button onClick={handleApplyClick} className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto">
               Aplicar
-              <LogIn size={20} />
+              <LogIn size={20} className='ml-2' />
             </Button>
           )
         ) : (
           <div>
-            Primero debes completar tu perfil<a href="/cv"><Button className='ml-3'>AQUÍ</Button></a>
+            <p className='text-customBlue align-middle'>Primero debes completar tu perfil<a href="/cv"><Button className='ml-3 px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto'>AQUÍ</Button></a></p>
           </div>
         )}
       </div>
@@ -111,4 +83,4 @@ const Info: React.FC<InfoProps> = ({ data, onClose, isShortDescription }) => {
   );
 }
 
-export default Info;
+export default Apply;

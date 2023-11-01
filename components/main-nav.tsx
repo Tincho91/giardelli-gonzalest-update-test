@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useParams, usePathname } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 
 import { cn } from "@/lib/utils"
 
@@ -14,35 +15,48 @@ export function MainNav({
 
   const routes = [
     {
+      href: `/#metodologia`,
+      label: 'METODOLOGÍA',
+      active: pathname === `/` && (typeof window !== 'undefined' && window.location.hash === '#metodologia'),
+    },
+    {
+      href: `/#servicios`,
+      label: 'SERVICIOS',
+      active: pathname === `/` && (typeof window !== 'undefined' && window.location.hash === '#servicios'),
+    },
+    {
+      href: `/#clientes`,
+      label: 'CLIENTES',
+      active: pathname === `/` && (typeof window !== 'undefined' && window.location.hash === '#clientes'),
+    },
+    {
       href: `/positions`,
-      label: 'PUESTOS',
+      label: 'BÚSQUEDAS ACTIVAS',
       active: pathname === `/positions`,
     },
     {
       href: `/cv`,
-      label: 'TU CV',
+      label: 'CARGÁ TU CV',
       active: pathname === `/cv`,
     },
 
   ]
 
   return (
-    <nav
-      className={cn("mx-6 flex items-center space-x-4 lg:space-x-6", className)}
-      
-    >
+    <nav className={cn("ml-auto mx-6 flex items-center space-x-4 lg:space-x-6", className)}>
       {routes.map((route) => (
         <Link
           key={route.href}
           href={route.href}
           className={cn(
-            'text-sm font-medium transition-colors hover:text-primary',
-            route.active ? 'text-black dark:text-white' : 'text-muted-foreground'
+            'text-sm lg:text-lg font-bold transition-colors hover:text-customBlue-dark',
+            route.active ? 'text-customBlue-dark' : 'text-customBlue'
           )}
         >
           {route.label}
       </Link>
       ))}
+      <UserButton afterSignOutUrl="/" />
     </nav>
   )
 };

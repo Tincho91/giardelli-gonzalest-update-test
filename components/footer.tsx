@@ -1,9 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="border-t">
-      <div className="mx-auto py-10">
+    <footer className="bg-customBlue">
+      <div className="mx-auto py-10 flex flex-col items-center justify-center">
+        <img src="/images/footerIcon.png" alt="Footer Icon" className="mb-4" />
         <p className="text-center text-xs">
-          &copy; 2023 Consultora Giardelli-Gonzales, Inc. All rights reserved.
+          Mar del Plata | 2235474466 | info@giardelli-gonzalez.com
         </p>
       </div>
     </footer>

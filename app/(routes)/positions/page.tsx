@@ -1,15 +1,11 @@
-"use client";
-
 import Container from '@/components/ui/container';
-import PositionCard from '@/components/ui/position-card';
-import NoResults from '@/components/ui/no-results';
 
 import getPositions from "@/actions/get-positions";
 import getModalities from '@/actions/get-modalities';
-
-import Filter from './components/filter';
-import MobileFilters from './components/mobile-filters';
 import getAreasOfInterest from '@/actions/get-areasOfInterest';
+
+import FilterComponent from './components/filterComponent';
+
 
 export const revalidate = 0;
 
@@ -20,9 +16,10 @@ interface PositionsPageProps {
   }
 }
 
-const PositionsPage: React.FC<PositionsPageProps> = async ({ 
+const PositionsPage: React.FC<PositionsPageProps> = async ({
   searchParams
 }) => {
+
   const Positions = await getPositions({
     areaOfInterestId: searchParams.areaOfInterestId,
     modalityId: searchParams.modalityId,
@@ -32,35 +29,20 @@ const PositionsPage: React.FC<PositionsPageProps> = async ({
   const modalities = await getModalities();
 
   return (
-    <div className=""> 
-      <Container>
-        <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5 my-5">BÚSQUEDAS ACTIVAS</h1>
-        <div className="px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-            <MobileFilters modalities={modalities} areasOfInterest={areasOfInterest} />
-            <div className="hidden lg:block">
-              <Filter
-                valueKey="areaOfInterestId" 
-                name="Áreas de Interés"
-                data={areasOfInterest}
-              />
-              <Filter
-                valueKey="modalityId" 
-                name="Modalidades" 
-                data={modalities}
-              />
-            </div>
-            <div className="mt-6 lg:col-span-4 lg:mt-0">
-              {Positions.length === 0 && <NoResults />}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {Positions.map((item) => (
-                  <PositionCard key={item.id} data={item} />
-                ))}
-              </div>
+    <div className="bg-white pt-[75px] relative min-h-full">
+      <div className="absolute top-[60px] sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
+        <img src="/images/positionsVector.png" className="w-full" />
+      </div>
+      <div className='z-40 relative'>
+        <Container>
+          <p className="text-center text-4xl font-extrabold my-10 text-customBlue">BÚSQUEDAS ACTIVAS</p>
+          <div className="px-4 sm:px-6 lg:px-8 pb-24">
+            <div>
+              <FilterComponent initialPositions={Positions} areasOfInterest={areasOfInterest} modalities={modalities} />
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 };

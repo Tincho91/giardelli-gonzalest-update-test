@@ -1,13 +1,23 @@
-import Container from "@/components/ui/container";
+import Clients from "@/components/clients";
+import Contact from "@/components/contact";
+import Hero from "@/components/hero";
+import HeroFooter from "@/components/heroFooter";
+import Methodology from "@/components/methodology";
+import Services from "@/components/services";
 
 export const revalidate = 0;
 
 const HomePage = () => {
 
   return (
-    <Container>
-      <h1 className="text-center mb-4 border text-3xl md:text-4xl lg:text-5xl rounded-md p-5 my-5">GIARDELLI GONZALEZ - DEMO 2</h1>
-    </Container>
+    <>
+      <Hero />
+      <HeroFooter />
+      <Methodology />
+      <Services />
+      <Clients />
+      <Contact />
+    </>
   )
 };
 

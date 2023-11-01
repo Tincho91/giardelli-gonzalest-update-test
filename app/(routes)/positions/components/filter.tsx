@@ -3,12 +3,10 @@
 import qs from "query-string";
 import { useRouter, useSearchParams } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Modality, AreaOfInterest } from "@/types";
 
 interface FilterProps {
-  data: (Modality | AreaOfInterest)[]; 
+  data: (Modality | AreaOfInterest)[];
   name: string;
   valueKey: string;
 };
@@ -22,7 +20,7 @@ const Filter: React.FC<FilterProps> = ({
   const router = useRouter();
 
   const selectedValue = searchParams.get(valueKey);
-  
+
   const onClick = (id: string) => {
     const current = qs.parse(searchParams.toString());
 
@@ -43,26 +41,24 @@ const Filter: React.FC<FilterProps> = ({
     router.push(url);
   }
 
-  return ( 
-    <div className="mb-8">
-      <h3 className="text-lg font-semibold">
-        {name}
-      </h3>
-      <hr className="my-4" />
-      <div className="flex flex-wrap gap-2">
-        {data.map((filter) => (
-          <div key={filter.id} className="flex items-center">
-            <Button
-              className={cn(
-                'rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300',
-                selectedValue === filter.id && 'bg-black text-white'
-              )}
-              onClick={() => onClick(filter.id)}
-            >
-              {filter.name}
-            </Button>
-          </div>
-        ))}
+  return (
+    <div>
+      <div className="mr-4">
+        <select
+          id={valueKey}
+          value={selectedValue || ""}
+          onChange={(e) => onClick(e.target.value)}
+          className="px-4 py-2 text-white bg-customBlue rounded-3xl hover:bg-customBlue-dark focus:outline-none border-none w-full md:w-auto"
+        >
+          <option value="" disabled>
+            {name}
+          </option>
+          {data.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
