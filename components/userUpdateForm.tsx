@@ -21,6 +21,12 @@ interface UserUpdateFormProps {
   user: any;
 }
 
+interface AreaOfInterest {
+  id: string | number; // adjust the type based on your actual data structure
+  name: string;
+  // add any other fields that you have
+}
+
 const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
   const [name, setName] = useState(user.name || '');
   const [email, setEmail] = useState(user.email || '');
@@ -29,7 +35,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
   const [cvUrl, setCvUrl] = useState(user.cvUrl || '');
   const [isCVUploaded, setIsCVUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [areasOfInterest, setAreasOfInterest] = useState([]);
+  const [areasOfInterest, setAreasOfInterest] = useState<AreaOfInterest[]>([]);
   const [selectedArea, setSelectedArea] = useState(user.areaOfInterestId || '');
 
   const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/users/${user.id}`;
