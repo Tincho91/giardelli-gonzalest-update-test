@@ -42,7 +42,7 @@ const Hero = () => {
       >
         <SwiperSlide
           style={{
-            backgroundImage: "url('/images/heroBanner1.png')",
+            backgroundImage: "url('/images/herobanner1.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: slideHeight,
