@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css'
@@ -11,23 +9,8 @@ import 'swiper/css/effect-fade';
 import { EffectFade, Autoplay, Pagination } from 'swiper/modules';
 
 const Hero = () => {
-  const heroRef = useRef(null);
-  const [slideHeight, setSlideHeight] = useState('100vh');
-  const [marginTop, setMarginTop] = useState('0px');
-
-  useEffect(() => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar && heroRef.current) {
-      // @ts-ignore
-      const newHeight = window.innerHeight - navbar.offsetHeight - 20;
-      setSlideHeight(`${newHeight}px`);
-      // @ts-ignore
-      setMarginTop(`${navbar.offsetHeight}px`);
-    }
-  }, []);
-
   return (
-    <div ref={heroRef} style={{ marginTop: marginTop }}>
+    <div>
       <Swiper
         effect={'fade'}
         loop={true}
@@ -39,73 +22,64 @@ const Hero = () => {
           clickable: true,
         }}
         modules={[EffectFade, Autoplay, Pagination]}
+        className='hero-swiper mt-[64px]'
       >
-        <SwiperSlide
-          style={{
-            backgroundImage: "url('/images/herobanner1.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: slideHeight,
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end',
-            position: 'relative'
-          }}
-        >
-          <div className="absolute bottom-0 left-0 right-0 h-[30%] z-10 bg-gradient-to-t from-[#143241] to-transparent">
-            {/* Gradient overlay */}
-          </div>
+        {[
+          { 
+            large: '/images/herobanner1.png', 
+            small: '/images/herobanner1_small.png', 
+            text: 'El ',
+            highlightedText: 'pensamiento',
+            restText: ' es el motor del cambio'
+          },
+          { 
+            large: '/images/heroBanner2.png', 
+            small: '/images/heroBanner2_small.png', 
+            text: 'Consultoría ',
+            highlightedText: 'profesional',
+            restText: ' para organizaciones'
+          },
+          { 
+            large: '/images/heroBanner3.png', 
+            small: '/images/heroBanner3_small.png', 
+            text: 'Procesos de transformación gestados por sus ',
+            highlightedText: 'protagonistas',
+            restText: ''
+          },
+        ].map((slide, index) => (
+          <SwiperSlide key={index}
+            style={{
+              display: 'flex',
+              height: "100%",
+              alignItems: 'flex-start',
+              justifyContent: 'flex-end',
+              position: 'relative'
+            }}
+          >
+            <div 
+              className="sm:hidden absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url('${slide.small}')` }}
+            >
+              {/* Small screen image */}
+            </div>
+            <div 
+              className="hidden sm:block absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url('${slide.large}')` }}
+            >
+              {/* Large screen image */}
+            </div>
 
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
-            <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
-              El <span className="hero-text-border inline-block">pensamiento</span> es el motor del cambio
-            </h1>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            backgroundImage: "url('/images/heroBanner2.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: slideHeight,
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end',
-            position: 'relative'
-          }}
-        >
-          <div className="absolute bottom-0 left-0 right-0 h-[30%] z-10 bg-gradient-to-t from-[#143241] to-transparent">
-            {/* Gradient overlay */}
-          </div>
+            <div className="absolute bottom-0 left-0 right-0 h-[30%] z-10 bg-gradient-to-t from-[#143241] to-transparent">
+              {/* Gradient overlay */}
+            </div>
 
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
-            <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
-              Consultoría <span className="hero-text-border inline-block">profesional</span> para organizaciones
-            </h1>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          style={{
-            backgroundImage: "url('/images/heroBanner3.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: slideHeight,
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end',
-            position: 'relative'
-          }}
-        >
-          <div className="absolute bottom-0 left-0 right-0 h-[30%] z-10 bg-gradient-to-t from-[#143241] to-transparent">
-            {/* Gradient overlay */}
-          </div>
-
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
-            <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
-              Procesos de transformación gestados por sus <span className="hero-text-border inline-block">protagonistas</span>
-            </h1>
-          </div>
-        </SwiperSlide>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
+              <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
+                {slide.text}<span className="hero-text-border inline-block">{slide.highlightedText}</span>{slide.restText}
+              </h1>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   )

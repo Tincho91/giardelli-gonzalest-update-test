@@ -43,7 +43,7 @@ export function MainNav({
   ]
 
   return (
-    <nav className={cn("ml-auto mx-6 flex items-center space-x-4 lg:space-x-6", className)}>
+    <nav className={cn("ml-auto flex items-center space-x-4 lg:space-x-6", className)}>
       {routes.map((route) => (
         <Link
           key={route.href}

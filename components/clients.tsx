@@ -11,88 +11,65 @@ import Container from './ui/container';
 
 const Clients = () => {
 
+  const clientImages = [
+    "/images/clients/aguero.png",
+    "/images/clients/aire srl.webp",
+    "/images/clients/antares.png",
+    "/images/clients/cabrales.png",
+    "/images/clients/consca.png",
+    "/images/clients/constructora del mar.png",
+    "/images/clients/cutaneo.png",
+    "/images/clients/del cerro patagonia.png",
+    "/images/clients/electroterma.jpg",
+    "/images/clients/footer-logo-redbox-range.png",
+    "/images/clients/fotos nino.png",
+    "/images/clients/frio polar.jpg",
+    "/images/clients/granjaLaPiedra.png",
+    "/images/clients/hanna.png",
+    "/images/clients/logo kahl.png",
+    "/images/clients/LOGOISOTIPO CONSCA+.webp",
+    "/images/clients/Mc Cain.png",
+    "/images/clients/municipalidad tandil.png",
+    "/images/clients/nuevologo-tecnioptica.png",
+    "/images/clients/Ogham.png",
+    "/images/clients/pepsico.png",
+    "/images/clients/pizzolo.png",
+  ];
+
   return (
     <div id='clientes' className="client-carousel bg-customGrey py-10">
-      <p className="text-4xl font-extrabold my-10 text-customBlue text-center">ALGUNOS DE NUESTROS CLIENTES</p>
-
-      <Swiper
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        slidesPerView={5}
-        spaceBetween={50}
-        loop={true}
-        modules={[Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide className="flex items-center justify-center w-full h-full place-content-center">
-          <img src="/images/clients/aguero.png" alt="aguero" className="client-image w-full h-full" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center w-full h-full place-content-center">
-          <img src="/images/clients/aire srl.webp" alt="aire srl" className="client-image items-center justify-center h-full" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/antares.png" alt="antares" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/cabrales.png" alt="cabrales" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/consca.png" alt="consca" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/constructora del mar.png" alt="constructora del mar" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/cutaneo.png" alt="cutaneo" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/del cerro patagonia.png" alt="del cerro patagonia" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/electroterma.jpg" alt="electroterma" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/footer-logo-redbox-range.png" alt="footer-logo-redbox-range" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/fotos nino.png" alt="fotos nino" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/frio polar.jpg" alt="frio polar" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/granjaLaPiedra.png" alt="granjaLaPiedra" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/hanna.png" alt="hanna" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/logo kahl.png" alt="logo kahl" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/LOGOISOTIPO CONSCA+.webp" alt="LOGOISOTIPO CONSCA+" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/Mc Cain.png" alt="Mc Cain" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/municipalidad tandil.png" alt="municipalidad tandil" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/nuevologo-tecnioptica.png" alt="nuevologo-tecnioptica" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/Ogham.png" alt="Ogham" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/pepsico.png" alt="pepsico" className="client-image" />
-        </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center">
-          <img src="/images/clients/pizzolo.png" alt="pizzolo" className="client-image" />
-        </SwiperSlide>
-      </Swiper>
+        <p className="text-[8vw] md:text-[4.4vw] xl:text-[60px] font-extrabold mt-10 pb-16 text-customBlue text-center">ALGUNOS DE NUESTROS CLIENTES</p>
+        <Swiper
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          slidesPerView={2}
+          spaceBetween={50}
+          loop={true}
+          modules={[Autoplay, FreeMode]}
+          className="mySwiper"
+          breakpoints={{
+            576: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            992: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
+        >
+          {clientImages.map((imageSrc, index) => (
+            <SwiperSlide key={index} className="flex items-center justify-center w-full h-full place-content-center">
+              <img src={imageSrc} alt={`client-${index}`} className="client-image w-full h-full object-center object-cover" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
     </div>
   );
 };

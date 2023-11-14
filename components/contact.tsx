@@ -1,10 +1,45 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react';
 import Container from './ui/container';
 
 const Contact = () => {
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/send/route', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.name,
+          email: formData.email,
+          message: formData.message, // Include message
+        }),
+      });
+      // Handle response here
+    } catch (error) {
+      // Handle error here
+    }
+  };
+
+
   return (
     <div className='bg-customGrey'>
-      <Container>
+      <div className="mx-auto md:max-w-7xl md:px-[3%]">
         <div className="flex">
           {/* Imagen en la mitad izquierda */}
           <div className="w-1/2">
@@ -21,7 +56,7 @@ const Contact = () => {
             <h2 className="text-2xl text-center text-customBlue font-bold mb-4">ENVIANOS TU CONSULTA</h2>
 
             {/* Formulario */}
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                   Nombre y Apellido
@@ -32,6 +67,7 @@ const Contact = () => {
                   name="name"
                   className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
                   required
+                  onChange={handleChange}
                 />
               </div>
 
@@ -45,6 +81,7 @@ const Contact = () => {
                   name="email"
                   className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
                   required
+                  onChange={handleChange}
                 />
               </div>
 
@@ -58,6 +95,7 @@ const Contact = () => {
                   rows={7}
                   className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
                   required
+                  onChange={handleChange}
                 ></textarea>
               </div>
 
@@ -72,7 +110,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }

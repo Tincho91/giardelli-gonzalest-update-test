@@ -12,9 +12,9 @@ const Navbar = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
-    <div className="navbar fixed top-0 w-full border-b border-customBlue bg-white bg-opacity-85 z-50 overflow-hidden">
+    <div className="navbar fixed top-0 w-full border-b border-customBlue bg-white z-50">
       <Container>
-        <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+        <div className="relative flex h-16 items-center justify-between">
           <div className="ml-4 flex lg:ml-0 gap-x-2">
             <Link href="/">
               <img src="/brand.png" alt="CONSULTORA" className="h-10 w-full" />

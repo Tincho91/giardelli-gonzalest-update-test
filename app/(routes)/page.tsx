@@ -5,6 +5,7 @@ import HeroFooter from "@/components/heroFooter";
 import Methodology from "@/components/methodology";
 import Services from "@/components/services";
 
+
 export const revalidate = 0;
 
 const HomePage = () => {
