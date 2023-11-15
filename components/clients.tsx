@@ -34,10 +34,9 @@ const Clients = () => {
   ];
 
   return (
-    <div id='clientes' className="client-carousel bg-white py-10">
+    <div id='clientes' className="client-carousel bg-customGrey py-10">
         <p className="text-[8vw] md:text-[4.4vw] xl:text-[60px] font-extrabold mt-10 pb-16 text-customBlue text-center">ALGUNOS DE NUESTROS CLIENTES</p>
         <Marquee
-          gradient= {true}
           direction="left"
         >
           {clientImages.map((imageSrc, index) => (
@@ -47,7 +46,6 @@ const Clients = () => {
           ))}
         </Marquee>
         <Marquee
-          gradient= {true}
           direction="right"
         >
           {clientImages.map((imageSrc, index) => (

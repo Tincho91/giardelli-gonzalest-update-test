@@ -68,7 +68,6 @@ const Methodology = () => {
           </div>
         </Container>
       </div>
-
     </div>
   )
 }

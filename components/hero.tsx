@@ -26,7 +26,7 @@ const Hero = () => {
       >
         {[
           { 
-            large: '/images/heroBanner1.png', 
+            large: '/images/banner1.png', 
             small: '/images/heroBanner1_small.png', 
             text: 'El ',
             highlightedText: 'pensamiento',
