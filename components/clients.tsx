@@ -41,7 +41,7 @@ const Clients = () => {
         >
           {clientImages.map((imageSrc, index) => (
             <div key={index} className="flex items-center justify-center place-content-center overflow-hidden">
-              <img src={imageSrc} alt={`client-${index}`} className="client-image object-center object-cover px-10 pb-10" />
+              <img src={imageSrc} alt={`client-${index}`} className="client-image object-center object-cover max-h-28 px-10 pb-10" />
             </div>
           ))}
         </Marquee>
@@ -50,7 +50,7 @@ const Clients = () => {
         >
           {clientImages.map((imageSrc, index) => (
             <div key={index} className="flex items-center justify-center place-content-center overflow-hidden">
-              <img src={imageSrc} alt={`client-${index}`} className="client-image object-center object-cover px-10 pb-10" />
+              <img src={imageSrc} alt={`client-${index}`} className="client-image object-center object-cover max-h-28 px-10 pb-10" />
             </div>
           ))}
         </Marquee>
