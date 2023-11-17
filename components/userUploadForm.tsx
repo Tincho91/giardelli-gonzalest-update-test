@@ -78,7 +78,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
   };
 
   return (
-    <div className="bg-white pt-[75px] relative min-h-full pb-5 xl:flex xl:flex-col xl:justify-center xl:pt-0">
+    <div className="bg-white relative min-h-full py-10 xl:flex xl:flex-col xl:justify-center">
       <div className="absolute top-[60px] sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
         <img src="/images/positionsVector.png" className="w-full" />
       </div>
