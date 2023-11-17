@@ -84,7 +84,7 @@ const MobileNav: React.FC = () => {
       </PopoverTrigger>
       <PopoverContent className="absolute right-0 w-56 z-[99999]">
         <div
-          className={`cursor-pointer p-2 ${currentSection === '#metodologia' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+          className={`cursor-pointer text-white p-2 ${currentSection === '#metodologia' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
           onClick={() => navigateTo('/#metodologia')}
         >
           METODOLOGÍA

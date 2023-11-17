@@ -20,7 +20,6 @@ const CVPage: React.FC = () => {
   useEffect(() => {
     if (!user) {
       redirect('/sign-in');
-      return;
     }
 
     const fetchData = async () => {
