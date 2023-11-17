@@ -40,7 +40,7 @@ const SocialMediaButtons: React.FC = () => {
         style={{
           position: 'fixed',
           top: '30%',
-          right: isHidden ? -200 : 30,
+          right: isHidden ? -200 : 45,
           transform: 'translateY(-50%)',
           display: 'flex',
           flexDirection: 'column',
