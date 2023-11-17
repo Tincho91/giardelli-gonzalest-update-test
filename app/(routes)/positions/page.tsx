@@ -3,6 +3,7 @@ import Container from '@/components/ui/container';
 import getPositions from "@/actions/get-positions";
 import getModalities from '@/actions/get-modalities';
 import getAreasOfInterest from '@/actions/get-areasOfInterest';
+import Spinner from '@/components/ui/spinner';
 
 import FilterComponent from './components/filterComponent';
 
@@ -20,17 +21,32 @@ const PositionsPage: React.FC<PositionsPageProps> = async ({
   searchParams
 }) => {
 
-  const Positions = await getPositions({
-    areaOfInterestId: searchParams.areaOfInterestId,
-    modalityId: searchParams.modalityId,
-  });
+  let Positions, areasOfInterest, modalities;
 
-  const areasOfInterest = await getAreasOfInterest();
-  const modalities = await getModalities();
+  // Use try-catch block to handle errors during data fetching
+  try {
+    // Fetch data concurrently
+    [Positions, areasOfInterest, modalities] = await Promise.all([
+      getPositions({
+        areaOfInterestId: searchParams.areaOfInterestId,
+        modalityId: searchParams.modalityId,
+      }),
+      getAreasOfInterest(),
+      getModalities(),
+    ]);
+  } catch (error) {
+    // Handle error here (e.g., log, show an error message)
+    console.error('Error fetching data:', error);
+  }
+
+  // Render loading spinner if data fetching is in progress
+  if (!Positions || !areasOfInterest || !modalities) {
+    return <Spinner />;
+  }
 
   return (
-    <div className="bg-white pt-[75px] relative min-h-full">
-      <div className="absolute top-[60px] sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
+    <div className="bg-white relative min-h-full">
+      <div className="absolute sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
         <img src="/images/positionsVector.png" className="w-full" />
       </div>
       <div className='z-40 relative'>

@@ -8,6 +8,8 @@ import 'swiper/css/effect-fade';
 
 import { EffectFade, Autoplay, Pagination } from 'swiper/modules';
 
+import FadeInFromTop from './animations/fadeInFromTop';
+
 const Hero = () => {
   return (
     <div>
@@ -22,26 +24,26 @@ const Hero = () => {
           clickable: true,
         }}
         modules={[EffectFade, Autoplay, Pagination]}
-        className='hero-swiper mt-[64px]'
+        className='hero-swiper'
       >
         {[
-          { 
-            large: '/images/banner1.png', 
-            small: '/images/heroBanner1_small.png', 
+          {
+            large: '/images/banner1.png',
+            small: '/images/heroBanner1_small.png',
             text: 'El ',
             highlightedText: 'pensamiento',
             restText: ' es el motor del cambio'
           },
-          { 
-            large: '/images/heroBanner2.png', 
-            small: '/images/heroBanner2_small.png', 
+          {
+            large: '/images/heroBanner2.png',
+            small: '/images/heroBanner2_small.png',
             text: 'Consultoría ',
             highlightedText: 'profesional',
             restText: ' para organizaciones'
           },
-          { 
-            large: '/images/heroBanner3.png', 
-            small: '/images/heroBanner3_small.png', 
+          {
+            large: '/images/heroBanner3.png',
+            small: '/images/heroBanner3_small.png',
             text: 'Procesos de transformación gestados por sus ',
             highlightedText: 'protagonistas',
             restText: ''
@@ -56,13 +58,13 @@ const Hero = () => {
               position: 'relative'
             }}
           >
-            <div 
+            <div
               className="sm:hidden absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url('${slide.small}')` }}
             >
               {/* Small screen image */}
             </div>
-            <div 
+            <div
               className="hidden sm:block absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url('${slide.large}')` }}
             >
@@ -73,11 +75,15 @@ const Hero = () => {
               {/* Gradient overlay */}
             </div>
 
+
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
-              <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
-                {slide.text}<span className="hero-text-border inline-block">{slide.highlightedText}</span>{slide.restText}
-              </h1>
+              <FadeInFromTop>
+                <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
+                  {slide.text}<span className="hero-text-border inline-block">{slide.highlightedText}</span>{slide.restText}
+                </h1>
+              </FadeInFromTop>
             </div>
+
           </SwiperSlide>
         ))}
       </Swiper>

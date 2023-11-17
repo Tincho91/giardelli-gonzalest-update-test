@@ -1,4 +1,6 @@
 import Container from "./ui/container";
+import FadeInFromLeft from "./animations/fadeInFromLeft";
+import FadeInFromRight from "./animations/fadeInFromRight";
 
 const Methodology = () => {
   return (
@@ -7,7 +9,7 @@ const Methodology = () => {
 
       <div className="h-[150px] w-full bg-white absolute top-0 ">
         <Container>
-          <p className="font-extrabold overflow-hidden text-[8vw] md:text-[4.4vw] xl:text-[60px] text-customBlue absolute left-0 md:left-[1%] xl:left-0 w-full bottom-[15px] md:bottom-0 text-center md:text-left md:mb-[-17px] lg:mb-[-19px] xl:mb-[-27px]">
+          <p className="font-extrabold overflow-hidden text-[8vw] md:text-[4.4vw] xl:text-[60px] text-customBlue absolute left-0 md:left-[1%] xl:left-[0%] w-full bottom-[15px] md:bottom-0 text-center md:text-left md:mb-[-17px] lg:mb-[-19px] xl:mb-[-27px]">
             ¿CÓMO LO HACEMOS?
           </p>
         </Container>
@@ -44,11 +46,14 @@ const Methodology = () => {
         <Container>
           <div className="grid grid-cols-2 gap-6 mb-10 mt-[-25px]">
 
+
             <div className="relative flex items-center justify-center mt-[25px]">
-              <p className="text-white text-center text-[2vw] xl:text-3xl leading-[200%] xl:leading-[145%]">
-                El trabajo de la consultora comienza con una entrevista de mutuo conocimiento en la que definimos las diferentes instancias de intervención.
-                Luego, en el transcurso del diagnóstico y el plan de acción a implementar, delineamos el trabajo conjunto a realizar entre las personas que definimos como estratégicas en la organización y nuestro equipo.
-              </p>
+              <FadeInFromLeft>
+                <p className="text-white text-center text-[2vw] xl:text-3xl leading-[200%] xl:leading-[145%]">
+                  El trabajo de la consultora comienza con una entrevista de mutuo conocimiento en la que definimos las diferentes instancias de intervención.
+                  Luego, en el transcurso del diagnóstico y el plan de acción a implementar, delineamos el trabajo conjunto a realizar entre las personas que definimos como estratégicas en la organización y nuestro equipo.
+                </p>
+              </FadeInFromLeft>
             </div>
 
             <div className="relative flex items-center justify-center">
@@ -60,9 +65,11 @@ const Methodology = () => {
             </div>
 
             <div className="relative flex items-center justify-center">
-              <p className="text-white text-center text-[2vw] xl:text-3xl leading-[200%] xl:leading-[145%]">
-                Realizamos intervenciones que permiten pensar el negocio desde sus diversas aristas. Las mismas redundan en un proceso virtuoso de transformaciones gestadas por sus protagonistas.
-              </p>
+              <FadeInFromRight>
+                <p className="text-white text-center text-[2vw] xl:text-3xl leading-[200%] xl:leading-[145%]">
+                  Realizamos intervenciones que permiten pensar el negocio desde sus diversas aristas. Las mismas redundan en un proceso virtuoso de transformaciones gestadas por sus protagonistas.
+                </p>
+              </FadeInFromRight>
             </div>
 
           </div>

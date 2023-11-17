@@ -5,6 +5,7 @@ import ToastProvider from '@/providers/toast-provider'
 import { ThemeProvider } from '@/providers/theme-provider'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import SocialMediaButtons from '@/components/socialMediaButtons'
 import './globals.css'
 
 const font = Urbanist({ subsets: ['latin'] })
@@ -29,6 +30,7 @@ export default function RootLayout({
               <Navbar />
               {children}
               <Footer />
+              <SocialMediaButtons />
             </ThemeProvider>
           </body>
         </html>
