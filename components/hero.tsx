@@ -24,7 +24,7 @@ const Hero = () => {
           clickable: true,
         }}
         modules={[EffectFade, Autoplay, Pagination]}
-        className='hero-swiper'
+        className='hero-swiper pt-[70px]'
       >
         {[
           {
@@ -59,13 +59,13 @@ const Hero = () => {
             }}
           >
             <div
-              className="sm:hidden absolute inset-0 bg-cover bg-center"
+              className="sm:hidden absolute inset-0 bg-cover "
               style={{ backgroundImage: `url('${slide.small}')` }}
             >
               {/* Small screen image */}
             </div>
             <div
-              className="hidden sm:block absolute inset-0 bg-cover bg-center"
+              className="hidden sm:block absolute inset-0 bg-cover"
               style={{ backgroundImage: `url('${slide.large}')` }}
             >
               {/* Large screen image */}
