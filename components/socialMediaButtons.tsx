@@ -16,10 +16,11 @@ const coloredIconStyle = {
 
 const whatsappIconStyle = {
   ...commonIconStyle,
-  backgroundColor: '#25D366',  // Background color for the WhatsApp icon
-  color: 'white',  // Text color for the WhatsApp icon
-  borderRadius: '50%',  // Optional: Make it circular
-  padding: '4px',  // Optional: Adjust padding for better visual appearance
+  fontSize: "50px",
+  backgroundColor: '#25D366',
+  color: 'white',
+  borderRadius: '50%',
+  padding: '4px',
 };
 
 
@@ -33,6 +34,21 @@ const SocialMediaButtons: React.FC = () => {
 
   return (
     <div>
+      {/* WhatsApp Button (Always visible) */}
+      <motion.div
+        style={{
+          position: 'fixed',
+          bottom: 20,
+          right: 40,
+          zIndex: 1000,
+        }}
+      >
+        <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className=''>
+          <FaWhatsapp style={whatsappIconStyle} />
+        </a>
+      </motion.div>
+
+      {/* Social Media Buttons (Visible on devices sm and above) */}
       <motion.div
         initial={{ opacity: 1, x: 0 }}
         animate={{ opacity: isHidden ? 0 : 1, x: isHidden ? 200 : 0 }}
@@ -62,14 +78,9 @@ const SocialMediaButtons: React.FC = () => {
         <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
           <FaInstagram style={coloredIconStyle} />
         </a>
-
-        {/* WhatsApp Button */}
-        <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className='pt-20'>
-          <FaWhatsapp style={whatsappIconStyle} />
-        </a>
       </motion.div>
 
-      {/* Arrow Button to Toggle Visibility */}
+      {/* Arrow Button to Toggle Visibility (Visible on devices sm and above) */}
       <motion.button
         onClick={toggleVisibility}
         initial={{ opacity: 1 }}
@@ -80,12 +91,13 @@ const SocialMediaButtons: React.FC = () => {
           color: '#DD6C49',
           position: 'fixed',
           top: '50%',
-          right:  25 ,
+          right: 25,
           transform: 'translateY(-50%)',
           backgroundColor: 'transparent',
           border: 'none',
           cursor: 'pointer',
           zIndex: 1001,
+          display: 'none',
         }}
       >
         {isHidden ? <FaArrowLeft /> : <FaArrowRight />}
