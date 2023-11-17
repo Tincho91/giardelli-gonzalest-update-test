@@ -113,7 +113,10 @@ const MobileNav: React.FC = () => {
         >
           CARGÁ TU CV
         </div>
-        <UserButton afterSignOutUrl="/" />
+        
+        <div className="cursor-pointer hover:bg-gray-200 hover:text-customBlue p-2">
+          <UserButton afterSignOutUrl="/" />
+        </div>
       </PopoverContent>
     </Popover>
   );

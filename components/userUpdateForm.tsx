@@ -182,7 +182,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
           <div className="w-full mx-auto">
             {user.applications.length > 0 ? (
               user.applications.map((application: any) => (
-                <ApplicationItem key={application.id} application={application} />
+                <ApplicationItem key={application.id} application={application} user={user}/>
               ))
             ) : (
               <p className="text-customBlue text-center py-10">

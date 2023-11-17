@@ -1,9 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
-import Container from './ui/container';
+import Spinner from './ui/spinner';
+import toast from 'react-hot-toast';
+
 
 const Contact = () => {
+  const [isSubmitting, setSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -19,20 +22,29 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/send/route', {
+      setSubmitting(true);
+      const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          firstName: formData.name,
-          email: formData.email,
-          message: formData.message, // Include message
-        }),
+        body: JSON.stringify(formData),
       });
+      if (response.ok) {
+        // Reset the form
+        setFormData({ name: '', email: '', message: '' });
+        // Show success toast
+        toast.success('El email se envió correctamente.');
+      } else {
+        // Show error toast
+        toast.error('Hubo un error al enviar el email.');
+      }
       // Handle response here
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Error submitting form:', error.message);
       // Handle error here
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -103,8 +115,9 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="px-6 py-1 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark"
+                  disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
                 >
-                  Enviar
+                  {isSubmitting ? <Spinner /> : 'Enviar'}
                 </button>
               </div>
             </form>
