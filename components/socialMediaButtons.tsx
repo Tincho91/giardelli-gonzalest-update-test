@@ -1,11 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaFacebookSquare, FaWhatsapp, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 
 const commonIconStyle = {
@@ -28,43 +25,72 @@ const whatsappIconStyle = {
 
 // Define the social media buttons component
 const SocialMediaButtons: React.FC = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }} // Adjust x value based on your design
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 20 }}
-      transition={{ duration: 0.5 }}
-      style={{
-        position: 'fixed',
-        top: '30%', // Adjust top position based on your design
-        right: 30,
-        transform: 'translateY(-50%)',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '15px',
-        zIndex: 1000, // Ensure it's above other elements
-      }}
-    >     
-      {/* LinkedIn Button */}
-      <a href="https://www.linkedin.com/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className=''>
-        <FaLinkedin style={coloredIconStyle}/>
-      </a>
-      
-      {/* Facebook Button */}
-      <a href="https://www.facebook.com/your-facebook-profile" target="_blank" rel="noopener noreferrer">
-        <FaFacebookSquare style={coloredIconStyle}/>
-      </a>
-      
-      {/* Instagram Button */}
-      <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
-        <FaInstagram style={coloredIconStyle}/>
-      </a>
+  const [isHidden, setIsHidden] = useState(false);
 
-      {/* WhatsApp Button */}
-      <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className='pt-20'>
-        <FaWhatsapp style={whatsappIconStyle}/>
-      </a>
-    </motion.div>
+  const toggleVisibility = () => {
+    setIsHidden(!isHidden);
+  };
+
+  return (
+    <div>
+      <motion.div
+        initial={{ opacity: 1, x: 0 }}
+        animate={{ opacity: isHidden ? 0 : 1, x: isHidden ? 200 : 0 }}
+        transition={{ duration: 0.5 }}
+        style={{
+          position: 'fixed',
+          top: '30%',
+          right: isHidden ? -200 : 30,
+          transform: 'translateY(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '15px',
+          zIndex: 1000,
+        }}
+      >
+        {/* LinkedIn Button */}
+        <a href="https://www.linkedin.com/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className=''>
+          <FaLinkedin style={coloredIconStyle} />
+        </a>
+
+        {/* Facebook Button */}
+        <a href="https://www.facebook.com/your-facebook-profile" target="_blank" rel="noopener noreferrer">
+          <FaFacebookSquare style={coloredIconStyle} />
+        </a>
+
+        {/* Instagram Button */}
+        <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
+          <FaInstagram style={coloredIconStyle} />
+        </a>
+
+        {/* WhatsApp Button */}
+        <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className='pt-20'>
+          <FaWhatsapp style={whatsappIconStyle} />
+        </a>
+      </motion.div>
+
+      {/* Arrow Button to Toggle Visibility */}
+      <motion.button
+        onClick={toggleVisibility}
+        initial={{ opacity: 1 }}
+        animate={{ opacity: isHidden ? 1 : 0.5 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        style={{
+          color: '#DD6C49',
+          position: 'fixed',
+          top: '50%',
+          right:  25 ,
+          transform: 'translateY(-50%)',
+          backgroundColor: 'transparent',
+          border: 'none',
+          cursor: 'pointer',
+          zIndex: 1001,
+        }}
+      >
+        {isHidden ? <FaArrowLeft /> : <FaArrowRight />}
+      </motion.button>
+    </div>
   );
 };
 

@@ -11,6 +11,8 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
+import { UserButton } from '@clerk/nextjs';
+
 const MobileNav: React.FC = () => {
   const router = useRouter();  // Initialize useRouter
   const [isActive, setIsActive] = useState(false);
@@ -80,7 +82,7 @@ const MobileNav: React.FC = () => {
           ☰
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="absolute right-0 w-56">
+      <PopoverContent className="absolute right-0 w-56 z-[99999]">
         <div
           className={`cursor-pointer p-2 ${currentSection === '#metodologia' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
           onClick={() => navigateTo('/#metodologia')}
@@ -111,6 +113,7 @@ const MobileNav: React.FC = () => {
         >
           CARGÁ TU CV
         </div>
+        <UserButton afterSignOutUrl="/" />
       </PopoverContent>
     </Popover>
   );

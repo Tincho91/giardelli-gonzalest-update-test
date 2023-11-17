@@ -66,7 +66,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
         phoneNumber,
         linkedinUrl,
         cvUrl,
-        areaOfInterestId: selectedArea // added this line
+        areaOfInterestId: selectedArea
       });
 
       toast.success('User updated successfully!');
