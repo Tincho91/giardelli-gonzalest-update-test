@@ -90,25 +90,25 @@ const MobileNav: React.FC = () => {
           METODOLOGÍA
         </div>
         <div
-          className={`cursor-pointer p-2 ${currentSection === '#servicios' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+          className={`cursor-pointer text-white p-2 ${currentSection === '#servicios' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
           onClick={() => navigateTo('/#servicios')}
         >
           SERVICIOS
         </div>
         <div
-          className={`cursor-pointer p-2 ${currentSection === '#clientes' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+          className={`cursor-pointer text-white p-2 ${currentSection === '#clientes' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
           onClick={() => navigateTo('/#clientes')}
         >
           CLIENTES
         </div>
         <div
-          className="cursor-pointer hover:bg-gray-200 hover:text-customBlue p-2"
+          className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
           onClick={() => navigateTo('/positions')}
         >
           BÚSQUEDAS ACTIVAS
         </div>
         <div
-          className="cursor-pointer hover:bg-gray-200 hover:text-customBlue p-2"
+          className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
           onClick={() => navigateTo('/cv')}
         >
           CARGÁ TU CV
