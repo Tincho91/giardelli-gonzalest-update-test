@@ -10,7 +10,7 @@ interface FormData {
   message: string;
 }
 
-export async function POST(request: { json: () => Promise<FormData> }) {
+export async function POST(request: Request) {
   try {
     const formData = await request.json();
 
