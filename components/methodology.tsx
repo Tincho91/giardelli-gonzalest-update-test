@@ -17,8 +17,8 @@ const Methodology = () => {
         <Container>
           {/* Image with overlay */}
           <div>
-            <div className="relative my-10">
-              <img src="/images/metodologia1.png" alt="Metodologia" className="w-full max-w-90 mx-auto" />
+            <div className="relative my-20 w-full">
+              <img src="/images/metodologia1.png" alt="Metodologia" className="w-[90vw] mx-auto object-cover" />
               <div className="absolute top-0 left-0 w-full h-full bg-customBlue-dark opacity-70"></div>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center px-4">
                 <p className="text-white text-center lg:text-lg leading-[45px] lg:leading-[60px]">
@@ -27,7 +27,7 @@ const Methodology = () => {
               </div>
             </div>
             <div className="relative my-10">
-              <img src="/images/metodologia2.png" alt="Metodologia" className="w-[500px] max-w-90 mx-auto" />
+              <img src="/images/metodologia2.png" alt="Metodologia" className="w-[90vw] mx-auto" />
               <div className="absolute top-0 left-0 w-full h-full bg-customBlue-dark opacity-70"></div>
               <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center px-4">
                 <p className="text-white text-center lg:text-lg leading-[45px] lg:leading-[60px]">

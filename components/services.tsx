@@ -21,25 +21,25 @@ const Services = () => {
       </div>
 
       <div className="pt-10">
-        <Container>
+        <div className="mx-auto md:max-w-7xl">
           <div className="flex flex-col md:flex-row pt-20 md:pt-[17vw] md:mt-0">
             <div className="flex flex-col w-full md:w-1/2">
               {/* Rows for the left column */}
-              <div className="bg-white p-4 text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Generamos cambios en los <span className="font-bold"> sistemas empresariales</span> por medio de modificaciones en la estructura y en los procesos vigentes.</div>
-              <div className="bg-customBlue p-4 text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Intervenimos en los proceso de <span className="font-bold">traspaso intergeneracional </span>en empresas de familia, propiciando un pasaje saludable y armónico de la gestión y la propiedad.</div>
-              <div className="bg-white p-4 text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Realizamos <span className="font-bold"> capacitaciones</span> para gestar transformaciones a partir del desarrollo de saberes y habilidades.</div>
-              <div className="bg-customBlue p-4 text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Desarrollamos el área de <span className="font-bold"> recursos humanos</span> de manera externa para que luego se integre a la dinámica de la empresa y se convierta en una fortaleza .</div>
+              <div className="bg-white p-4 md:pl-[3%] text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Generamos cambios en los <span className="font-bold"> sistemas empresariales</span> por medio de modificaciones en la estructura y en los procesos vigentes.</div>
+              <div className="bg-customBlue p-4 md:pl-[3%] text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Intervenimos en los proceso de <span className="font-bold">traspaso intergeneracional </span>en empresas de familia, propiciando un pasaje saludable y armónico de la gestión y la propiedad.</div>
+              <div className="bg-white p-4 md:pl-[3%] text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Realizamos <span className="font-bold"> capacitaciones</span> para gestar transformaciones a partir del desarrollo de saberes y habilidades.</div>
+              <div className="bg-customBlue p-4 md:pl-[3%] text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Desarrollamos el área de <span className="font-bold"> recursos humanos</span> de manera externa para que luego se integre a la dinámica de la empresa y se convierta en una fortaleza .</div>
             </div>
             <div className="flex flex-col w-full md:w-1/2 md:pt-[15%]">
               {/* Rows for the right column */}
-              <div className="bg-white p-4 text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Construimos junto a nuestros clientes nuevos modelos para la <span className="font-bold"> toma de decisiones</span> que favorecen la gestión y la calidad de vida de quienes trabajan en la organización.</div>
-              <div className="bg-customBlue p-4 text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Seleccionamos mandos medios y cargos gerenciales y creamos las condiciones necesarias para la inclusión de <span className="font-bold"> nuevos talentos</span> que agreguen valor.</div>
-              <div className="bg-white p-4 text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Estructuramos cambios generados a partir de <span className="font-bold"> nuevas dinámicas</span> en los sistemas de comercialización.</div>
+              <div className="bg-white p-4 md:pr-[3%] text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Construimos junto a nuestros clientes nuevos modelos para la <span className="font-bold"> toma de decisiones</span> que favorecen la gestión y la calidad de vida de quienes trabajan en la organización.</div>
+              <div className="bg-customBlue p-4 md:pr-[3%] text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">Seleccionamos mandos medios y cargos gerenciales y creamos las condiciones necesarias para la inclusión de <span className="font-bold"> nuevos talentos</span> que agreguen valor.</div>
+              <div className="bg-white p-4 md:pr-[3%] text-customBlue text-center lg:text-lg leading-[45px] lg:leading-[60px] py-5">Estructuramos cambios generados a partir de <span className="font-bold"> nuevas dinámicas</span> en los sistemas de comercialización.</div>
             </div>
           </div>
-        </Container>
-        <div className="min-h-[50px] max-h-[129px] w-full bg-customBlue"></div>
+        </div>
       </div>
+      <div className="min-h-[120px] w-full bg-customBlue mt-[-1%] z-10 relative"></div>
     </div>
   );
 };

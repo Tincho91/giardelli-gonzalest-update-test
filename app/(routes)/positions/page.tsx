@@ -46,12 +46,12 @@ const PositionsPage: React.FC<PositionsPageProps> = async ({
 
   return (
     <div className="bg-white relative min-h-full">
-      <div className="absolute sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
+      <div className="absolute top-[0%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
         <img src="/images/positionsVector.png" className="w-full" />
       </div>
       <div className='z-40 relative'>
         <Container>
-          <p className="text-center text-4xl font-extrabold my-10 text-customBlue">BÚSQUEDAS ACTIVAS</p>
+          <p className="text-center text-4xl font-extrabold py-10 text-customBlue">BÚSQUEDAS ACTIVAS</p>
           <div className="px-4 sm:px-6 lg:px-8 pb-24">
             <div>
               <FilterComponent initialPositions={Positions} areasOfInterest={areasOfInterest} modalities={modalities} />
