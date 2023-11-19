@@ -15,26 +15,32 @@ const Methodology = () => {
 
       <div className="md:hidden">
         <Container>
-          {/* Image with overlay */}
-          <div>
-            <div className="relative my-20 w-full">
-              <img src="/images/metodologia1.png" alt="Metodologia" className="w-[90vw] mx-auto object-cover" />
-              <div className="absolute top-0 left-0 w-full h-full bg-customBlue-dark opacity-70"></div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center px-4">
-                <p className="text-white text-center lg:text-lg leading-[45px] lg:leading-[60px]">
+          <div className="grid grid-cols-1 gap-6 pt-10">
+
+            <div className="relative flex items-center justify-center mt-[25px]">
+              <FadeInFromLeft>
+                <p className="text-white text-center lg:text-lg leading-[30px] lg:leading-[60px]">
                   El trabajo de la consultora comienza con una entrevista de mutuo conocimiento en la que definimos las diferentes instancias de intervención. Luego, en el transcurso del diagnóstico y el plan de acción a implementar, delineamos el trabajo conjunto a realizar entre las personas que definimos como estratégicas en la organización y nuestro equipo.
                 </p>
-              </div>
+              </FadeInFromLeft>
             </div>
-            <div className="relative my-10">
-              <img src="/images/metodologia2.png" alt="Metodologia" className="w-[90vw] mx-auto" />
-              <div className="absolute top-0 left-0 w-full h-full bg-customBlue-dark opacity-70"></div>
-              <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center px-4">
-                <p className="text-white text-center lg:text-lg leading-[45px] lg:leading-[60px]">
+
+            <div className="relative flex items-center justify-center">
+              <img src="/images/metodologia1.png" alt="Metodologia" className="w-auto max-w-90 mx-auto max-h-[530px] rounded-md" />
+            </div>
+
+            <div className="relative flex items-center justify-center">
+              <FadeInFromRight>
+                <p className="text-white text-center lg:text-lg leading-[30px] lg:leading-[60px]">
                   Realizamos intervenciones que permiten pensar el negocio desde sus diversas aristas. Las mismas redundan en un proceso virtuoso de transformaciones gestadas por sus protagonistas.
                 </p>
-              </div>
+              </FadeInFromRight>
             </div>
+
+            <div className="relative flex items-center justify-center">
+              <img src="/images/metodologia2.png" alt="Metodologia" className="w-auto max-w-90 mx-auto max-h-[530px] rounded-md" />
+            </div>
+
           </div>
         </Container>
       </div>
