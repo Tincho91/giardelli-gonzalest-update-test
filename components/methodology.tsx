@@ -31,7 +31,7 @@ const Methodology = () => {
 
             <div className="relative flex items-center justify-center">
               <FadeInFromRight>
-                <p className="text-white text-center lg:text-lg leading-[30px] lg:leading-[60px]">
+                <p className="text-white py-5 text-center lg:text-lg leading-[30px] lg:leading-[60px]">
                   Realizamos intervenciones que permiten pensar el negocio desde sus diversas aristas. Las mismas redundan en un proceso virtuoso de transformaciones gestadas por sus protagonistas.
                 </p>
               </FadeInFromRight>
