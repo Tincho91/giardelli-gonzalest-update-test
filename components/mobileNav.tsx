@@ -29,7 +29,7 @@ const MobileNav: React.FC = () => {
 
   // Listen for clicks outside to deactivate
   useEffect(() => {
-    const handleDocumentClick = (e : any) => {
+    const handleDocumentClick = (e: any) => {
       // Close the menu if clicking outside the menu
       if (isActive && e.target.closest('.popover-content') === null && e.target.closest('.popover-trigger') === null) {
         setIsActive(false);
@@ -69,56 +69,60 @@ const MobileNav: React.FC = () => {
   }, []);
 
   return (
-    <Popover open={isActive} onOpenChange={() => setIsActive(!isActive)}>
-      <PopoverTrigger asChild onClick={() => setIsActive(!isActive)}>
-        <Button
-          onClick={() => setIsActive(!isActive)}
-          className={
-            isActive
-              ? 'bg-customBlue-dark text-white hover:bg-customBlue-darker'  // Active state
-              : 'bg-primary text-customBlue-dark hover:text-customBlue-darker border border-customBlue text-lg font-extrabold'  // Inactive state
-          }
-        >
-          ☰
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="absolute right-0 w-56 z-[99999]">
-        <div
-          className={`cursor-pointer text-white p-2 ${currentSection === '#metodologia' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
-          onClick={() => navigateTo('/#metodologia')}
-        >
-          METODOLOGÍA
-        </div>
-        <div
-          className={`cursor-pointer text-white p-2 ${currentSection === '#servicios' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
-          onClick={() => navigateTo('/#servicios')}
-        >
-          SERVICIOS
-        </div>
-        <div
-          className={`cursor-pointer text-white p-2 ${currentSection === '#clientes' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
-          onClick={() => navigateTo('/#clientes')}
-        >
-          CLIENTES
-        </div>
-        <div
-          className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
-          onClick={() => navigateTo('/positions')}
-        >
-          BÚSQUEDAS ACTIVAS
-        </div>
-        <div
-          className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
-          onClick={() => navigateTo('/cv')}
-        >
-          CARGÁ TU CV
-        </div>
-        
-        <div className="cursor-pointer hover:bg-gray-200 hover:text-customBlue p-2">
-          <UserButton afterSignOutUrl="/" />
-        </div>
-      </PopoverContent>
-    </Popover>
+    <div className='flex items-center'>
+      
+      <Popover open={isActive} onOpenChange={() => setIsActive(!isActive)}>
+        <PopoverTrigger asChild onClick={() => setIsActive(!isActive)} className='mr-5 '>
+          <Button
+            onClick={() => setIsActive(!isActive)}
+            className={
+              isActive
+                ? 'bg-customBlue-dark text-white hover:bg-customBlue-darker'  // Active state
+                : 'bg-primary text-customBlue-dark hover:text-customBlue-darker border border-customBlue text-lg font-extrabold'  // Inactive state
+            }
+          >
+            ☰
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="absolute right-0 w-56 z-[99999]">
+          <div
+            className={`cursor-pointer text-white p-2 ${currentSection === '#metodologia' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+            onClick={() => navigateTo('/#metodologia')}
+          >
+            METODOLOGÍA
+          </div>
+          <div
+            className={`cursor-pointer text-white p-2 ${currentSection === '#servicios' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+            onClick={() => navigateTo('/#servicios')}
+          >
+            SERVICIOS
+          </div>
+          <div
+            className={`cursor-pointer text-white p-2 ${currentSection === '#clientes' ? 'bg-gray-200 text-customBlue' : 'hover:bg-gray-200 hover:text-customBlue'}`}
+            onClick={() => navigateTo('/#clientes')}
+          >
+            CLIENTES
+          </div>
+          <div
+            className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
+            onClick={() => navigateTo('/positions')}
+          >
+            BÚSQUEDAS ACTIVAS
+          </div>
+          <div
+            className="cursor-pointer text-white hover:bg-gray-200 hover:text-customBlue p-2"
+            onClick={() => navigateTo('/cv')}
+          >
+            CARGÁ TU CV
+          </div>
+        </PopoverContent>
+      </Popover>
+
+      <div className="cursor-pointer hover:bg-gray-200 hover:text-customBlue">
+        <UserButton afterSignOutUrl="/" />
+      </div>
+
+    </div>
   );
 };
 

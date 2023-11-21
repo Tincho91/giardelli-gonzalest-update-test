@@ -30,19 +30,23 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
+
+      console.log('Response:', response);
+
+
       if (response.ok) {
-        // Reset the form
+
         setFormData({ name: '', email: '', message: '' });
-        // Show success toast
+
         toast.success('El email se envió correctamente.');
       } else {
-        // Show error toast
+
         toast.error('Hubo un error al enviar el email.');
       }
-      // Handle response here
+
     } catch (error: any) {
       console.error('Error submitting form:', error.message);
-      // Handle error here
+
     } finally {
       setSubmitting(false);
     }
@@ -94,7 +98,7 @@ const Contact = () => {
                   className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
                   required
                   onChange={handleChange}
-                />
+                /> 
               </div>
 
               <div className="mb-4">

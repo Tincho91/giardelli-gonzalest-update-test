@@ -18,6 +18,8 @@ const CVPage: React.FC = () => {
   const [areasOfInterest, setAreasOfInterest] = useState<AreaOfInterest[]>([]);
 
   useEffect(() => {
+    setLoading(true);
+
     if (!user) {
       redirect('/sign-in');
     }
@@ -39,7 +41,7 @@ const CVPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="bg-white relative flex items-center justify-center h-full w-full">
+      <div className="bg-white relative flex items-center justify-center min-h-[87vh] w-full">
         <div className="absolute sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
           <img src="/images/positionsVector.png" className="w-full" />
         </div>

@@ -4,12 +4,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { LogIn } from "lucide-react";
 import { toast } from 'react-hot-toast';
+import Router from "next/router";
 import { useRouter } from "next/navigation";
 import { User } from '@/types';
 import { useUser } from '@clerk/clerk-react';
 import { Button } from "./ui/button";
 import { Position } from "@/types";
 import getUsers from "@/actions/get-users";
+
 
 interface ApplyProps {
   data: Position;
@@ -43,8 +45,21 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
         const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/users/${currentUserData.id}`, formData);
   
         if (response.status === 200) {
+          const emailData = {
+            user: {
+              name: currentUserData.name,
+              cv: currentUserData.cvUrl,
+              email: currentUserData.email,
+            },
+            application: {
+              name: data.name, // Assuming data contains the job information
+            },
+          };
+
+          await axios.post('/api/apGiardelli', emailData);
+
           toast.success("Successfully applied for the position.");
-          window.location.reload();
+          Router.reload();
         } else {
           toast.error("Failed to apply for the position.");
         }
@@ -70,7 +85,7 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
           ) : (
             <Button onClick={handleApplyClick} className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto">
               Aplicar
-              <LogIn size={20} className='ml-2' />
+              <LogIn size={20} className='ml-2'/> 
             </Button>
           )
         ) : (

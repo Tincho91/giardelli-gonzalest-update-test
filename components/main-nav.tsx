@@ -43,13 +43,13 @@ export function MainNav({
   ]
 
   return (
-    <nav className={cn("ml-auto flex items-center space-x-4 lg:space-x-6", className)}>
+    <nav className={cn("ml-auto flex items-center space-x-4 lg:space-x-6 ", className)}>
       {routes.map((route) => (
         <Link
           key={route.href}
           href={route.href}
           className={cn(
-            'text-sm lg:text-lg font-bold transition-colors hover:text-customBlue-dark',
+            'text-sm lg:text-md xl:text-lg font-bold transition-colors hover:text-customBlue-dark',
             route.active ? 'text-customBlue-dark' : 'text-customBlue'
           )}
         >

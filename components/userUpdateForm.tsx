@@ -78,13 +78,13 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
   };
 
   return (
-    <div className="bg-white relative py-10">
-      <div className="absolute top-[60px] sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
+    <div className="bg-white relative py-10 min-h-[87vh]">
+      <div className="absolute top-0 sm:top-[-1%] md:top-[-2%] lg:top-[-10%] xl:top-[-20%] left-0 right-0 z-[0]">
         <img src="/images/positionsVector.png" className="w-full" />
       </div>
       <Container >
         <div className="relative flex flex-col justify-center mb-5">
-          <h1 className="text-4xl font-extrabold my-10 text-customBlue text-center">Actualizar Perfil</h1>
+          <h2 className="text-4xl font-extrabold my-10 text-customBlue text-center">Actualizar Perfil</h2>
           <div className="w-full mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4 w-full mx-auto md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
               <div className="relative flex flex-col items-center justify-center md:mt-0">
@@ -158,7 +158,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
                       <Button
                         type="button"
                         onClick={(e) => open()}
-                        className="px-4 py-2 mb-4 md:mb-0 text-customOrange border-customOrange border-[2px] bg-white rounded-3xl hover:bg-customOrange hover:text-white w-full md:w-auto"
+                        className="px-4 py-2 text-sm mb-4 md:mb-0 text-customOrange border-customOrange border-[2px] bg-white rounded-3xl hover:bg-customOrange hover:text-white w-full md:w-auto"
                       >
                         ACTUALIZAR CV
                       </Button>
@@ -167,7 +167,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
                   {isCVUploaded && <p className="text-green-600 md:self-end mb-4 md:mb-0">CV Subido Correctamente!</p>}
                   <Button
                     type="submit"
-                    className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
+                    className="px-4 py-2 text-sm text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
                   >
                     {isLoading ? <Spinner /> : 'ACTUALIZAR PERFIL'}
                   </Button>
@@ -178,7 +178,7 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
         </div>
 
         <div className="relative flex flex-col justify-center">
-          <h1 className="text-4xl font-extrabold my-10 text-customBlue text-center">Empleos Aplicados</h1>
+          <h2 className="text-4xl font-extrabold my-10 text-customBlue text-center">Empleos Aplicados</h2>
           <div className="w-full mx-auto">
             {user.applications.length > 0 ? (
               user.applications.map((application: any) => (

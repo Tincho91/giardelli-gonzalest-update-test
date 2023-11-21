@@ -95,7 +95,7 @@ const SocialMediaButtons: React.FC = () => {
           style={{
             color: '#DD6C49',
             position: 'fixed',
-            top: '50%',
+            top: '36%',
             right: 25,
             transform: 'translateY(-50%)',
             backgroundColor: 'transparent',

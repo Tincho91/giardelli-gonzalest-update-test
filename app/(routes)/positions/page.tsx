@@ -1,5 +1,4 @@
 import Container from '@/components/ui/container';
-
 import getPositions from "@/actions/get-positions";
 import getModalities from '@/actions/get-modalities';
 import getAreasOfInterest from '@/actions/get-areasOfInterest';

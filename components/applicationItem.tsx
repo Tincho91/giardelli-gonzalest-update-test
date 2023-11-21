@@ -108,13 +108,13 @@ const ApplicationItem: React.FC<{ application: any; user: any }> = ({ applicatio
 
   return (
     <div key={application.id} className="flex flex-col space-y-4 mb-4 md:flex-row md:space-x-4 md:space-y-0 border p-5 rounded-3xl">
-      <Button type="button" className={`w-full rounded-3xl px-4 py-2 md:w-1/3`}>
+      <Button type="button" className={`w-full text-sm rounded-3xl px-4 py-2 md:w-1/3`}>
         {positionName || <Spinner />}
       </Button>
-      <Button type="button" className={`w-full rounded-3xl px-4 py-2 md:w-1/3 ${getStatusColor(application.status)}`}>
+      <Button type="button" className={`w-full text-sm rounded-3xl px-4 py-2 md:w-1/3 ${getStatusColor(application.status)}`}>
         {getStatusContent(application.status)}
       </Button>
-      <Button type="button" className={`w-full rounded-3xl px-4 py-2 md:w-1/3 bg-red-500`} onClick={() => setIsModalOpen(true)}>
+      <Button type="button" className={`w-full text-sm rounded-3xl px-4 py-2 md:w-1/3 bg-red-500`} onClick={() => setIsModalOpen(true)}>
         Cancelar Postulación
       </Button>
 
