@@ -17,14 +17,14 @@ const Hero = () => {
         effect={'fade'}
         loop={true}
         autoplay={{
-          delay: 300000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
         modules={[EffectFade, Autoplay, Pagination]}
-        className='hero-swiper pt-[70px]'
+        className='hero-swiper'
       >
         {[
           {
@@ -78,7 +78,7 @@ const Hero = () => {
 
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-11/12 text-center">
               <FadeInFromTop>
-                <h1 className="text-white font-extrabold text-3xl sm:text-6xl md:text-7xl">
+                <h1 className="text-white font-extrabold text-3xl sm:text-4xl md:text-5xl">
                   {slide.text}<span className="hero-text-border inline-block">{slide.highlightedText}</span>{slide.restText}
                 </h1>
               </FadeInFromTop>

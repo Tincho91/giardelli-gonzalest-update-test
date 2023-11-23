@@ -85,12 +85,6 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
       <Container>
         <div className="relative flex flex-col justify-center mb-5">
           <h1 className="text-4xl font-extrabold my-10 text-customBlue text-center">Crear Perfil</h1>
-          <p className="text-center text-customBlue mb-4 text-sm md:text-lg lg:text-xl">
-            Nuestra consultora se ocupa de realizar <span className='font-bold'> procesos de selección de personas </span> para ocupar mandos medios y gerenciales dentro de la jerarquía de distintas entidades tales como, gestor organizacional, profesional en gestión, CEO, gerente, director y project manager, entre otros.
-            <br />
-            <br />
-            <span className='font-bold'> Si tu trayectoria es acorde a dichos puestos, te invitamos a cargar tu CV. </span>
-          </p>
 
           <div className="w-full mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4 w-full mx-auto md:grid md:grid-cols-2 md:gap-4 md:space-y-0">

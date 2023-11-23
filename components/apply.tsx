@@ -31,7 +31,7 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
       const currentUser = usersFromDB.find(u => u.clerkId === clerkUserId);
       setCurrentUserData(currentUser ?? null);
     };
-  
+
     fetchUsers();
   }, [user, clerkUserId]);
 
@@ -41,9 +41,9 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
         const formData = {
           positionId: data?.id
         };
-  
+
         const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/users/${currentUserData.id}`, formData);
-  
+
         if (response.status === 200) {
           const emailData = {
             user: {
@@ -56,7 +56,11 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
             },
           };
 
+          // Email para Giardelli-Gonzalez
           await axios.post('/api/apGiardelli', emailData);
+
+          // Email para usuario
+          await axios.post('/api/apUsuario', emailData);
 
           toast.success("Successfully applied for the position.");
           Router.reload();
@@ -79,13 +83,13 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
   return (
     <div className='flex align-middle'>
       <div className="flex items-center gap-x-3 align-middle">
-        { currentUserData ? (
+        {currentUserData ? (
           hasApplied ? (
             <div><p className='text-customBlue text-bold'>Tu aplicación está en revisión</p></div>
           ) : (
             <Button onClick={handleApplyClick} className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto">
               Aplicar
-              <LogIn size={20} className='ml-2'/> 
+              <LogIn size={20} className='ml-2' />
             </Button>
           )
         ) : (

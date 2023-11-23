@@ -25,7 +25,6 @@ const Clients = () => {
     "/images/clients/hanna.png",
     "/images/clients/mccain.png",
     "/images/clients/nino.png",
-    "/images/clients/ogham.png",
     "/images/clients/optica.png",
     "/images/clients/pepsico.png",
     "/images/clients/pizzolo.png",
@@ -34,7 +33,7 @@ const Clients = () => {
   ];
 
   return (
-    <div id='clientes' className="client-carousel bg-customGrey py-10">
+    <div id='clientes' className="client-carousel bg-customGrey py-10 z-50">
         <p className="text-[8vw] md:text-[4.4vw] xl:text-[60px] font-extrabold mt-10 pb-16 text-customBlue text-center">ALGUNOS DE NUESTROS CLIENTES</p>
         <Marquee
           direction="left"

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaInstagram, FaFacebookSquare, FaWhatsapp, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaWhatsapp, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 
 const commonIconStyle = {
@@ -45,7 +45,7 @@ const SocialMediaButtons: React.FC = () => {
             backgroundColor: "#25d366",
           }}
         >
-          <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" className=''>
+          <a href="https://wa.me/2235474466" target="_blank" rel="noopener noreferrer">
             <FaWhatsapp style={whatsappIconStyle} />
           </a>
         </motion.div>
@@ -70,17 +70,12 @@ const SocialMediaButtons: React.FC = () => {
           }}
         >
           {/* LinkedIn Button */}
-          <a href="https://www.linkedin.com/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className=''>
+          <a href="https://www.linkedin.com/company/giardelli-gonz%C3%A1lez-consultora/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className=''>
             <FaLinkedin style={coloredIconStyle} />
           </a>
 
-          {/* Facebook Button */}
-          <a href="https://www.facebook.com/your-facebook-profile" target="_blank" rel="noopener noreferrer">
-            <FaFacebookSquare style={coloredIconStyle} />
-          </a>
-
           {/* Instagram Button */}
-          <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/giardelligonzalez?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">
             <FaInstagram style={coloredIconStyle} />
           </a>
         </motion.div>

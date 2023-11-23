@@ -14,17 +14,12 @@ const Footer = () => {
         {/* Social Media Icons */}
         <div className="flex gap-10 pt-5">
           {/* LinkedIn Icon */}
-          <a href="https://www.linkedin.com/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/company/giardelli-gonz%C3%A1lez-consultora/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
             <FaLinkedin style={{ fontSize: '30px', color: '#DD6C49' }} />
           </a>
 
-          {/* Facebook Icon */}
-          <a href="https://www.facebook.com/your-facebook-profile" target="_blank" rel="noopener noreferrer">
-            <FaFacebookSquare style={{ fontSize: '30px', color: '#DD6C49' }} />
-          </a>
-
           {/* Instagram Icon */}
-          <a href="https://www.instagram.com/your-instagram-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/giardelligonzalez?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">
             <FaInstagram style={{ fontSize: '30px', color: '#DD6C49' }} />
           </a>
         </div>

@@ -1,4 +1,4 @@
-import { EmailTemplate } from "@/components/emails/mainContactForm";
+import { EmailTemplate } from "@/components/emails/userPositionApplication";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -6,13 +6,13 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const formData = await request.json();
+    const emailData = await request.json();
 
     const data = await resend.emails.send({
-      from: "Consultas desde Web <giardelli@gonzalez.com>",
-      to: ["maiarumartin@hotmail.com"],
-      subject: `Consulta de ${formData.name}`,
-      react: EmailTemplate(formData),
+      from: "Giardelli Gonzalez <Giardelli-Gonzalez@resend.dev>",
+      to: emailData.user.email,
+      subject: `Aplicación recibida`,
+      react: EmailTemplate(emailData),
       text: "",
     });
 

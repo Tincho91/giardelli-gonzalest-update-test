@@ -1,12 +1,13 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Container from './ui/container';
 import FadeInFromTop from './animations/fadeInFromTop';
 
 
 
 const HeroFooter = () => {
+  
 
   return (
     <div className='bg-customBlue'>
@@ -24,7 +25,7 @@ const HeroFooter = () => {
       </Container>
       <div className="w-full relative">
         <img src="/images/vector.png" alt="Vector" className="absolute top-0 w-full mt-[-21%]" />
-        <img src="/images/heroFooterBanner.png" alt="Banner" className="mx-auto w-full max-h-[85vh] object-cover object-top" />
+        <img src="/images/heroFooterBanner.png" alt="Banner" className="mx-auto w-full max-h-[100vh] object-cover object-top" />
       </div>
     </div>
   )

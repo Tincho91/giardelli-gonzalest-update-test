@@ -9,11 +9,11 @@ export async function POST(request: Request) {
     const emailData = await request.json();
 
     const data = await resend.emails.send({
-      from: "Alerta de aplicación de usuario <onboarding@resend.dev>",
-      to: ["maiarumartin@hotmail.com"],
+      from: "Alerta de aplicación de usuario <Giardelli-Gonzalez@resend.dev>",
+      to: ["info@giardelli-gonzalez.com"],
       subject: `Nuevo Aplicante para ${emailData.application.name}`,
       react: EmailTemplate(emailData),
-      text: "", // You can provide a plain text version if needed
+      text: "",
     });
 
     return NextResponse.json(data);
