@@ -39,7 +39,7 @@ const Services = () => {
               <div className="bg-customBlue p-4 md:pl-[3%] text-white text-center lg:text-lg leading-[45px] lg:leading-[60px] py-8">
                 <FadeIn>
                   <p>
-                    Intervenimos en los proceso de<span className="font-bold">traspaso intergeneracional </span> en empresas de familia, propiciando un pasaje saludable y armónico de la gestión y la propiedad.
+                    Intervenimos en los proceso de <span className="font-bold">traspaso intergeneracional </span> en empresas de familia, propiciando un pasaje saludable y armónico de la gestión y la propiedad.
                   </p>
                 </FadeIn>
               </div>
