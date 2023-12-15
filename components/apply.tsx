@@ -54,13 +54,13 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
             application: {
               name: data.name, // Assuming data contains the job information
             },
-          };
+          }; 
 
           // Email para Giardelli-Gonzalez
-          await axios.post('/api/apGiardelli', emailData);
+          await axios.post('/api/userApplicationEmail', emailData);
 
           // Email para usuario
-          await axios.post('/api/apUsuario', emailData);
+          await axios.post('/api/userNotificaitonEmail', emailData);
 
           toast.success("Successfully applied for the position.");
           Router.reload();

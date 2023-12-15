@@ -164,7 +164,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                       </Button>
                     )}
                   </CldUploadWidget>
-                  {isCVUploaded && <p className="text-green-600 md:self-end mb-4 md:mb-0">CV Subido Correctamente!</p>}
+                  
                   <Button
                     type="submit"
                     className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
@@ -172,6 +172,9 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                     {isLoading ? <Spinner /> : 'CREAR PERFIL'}
                   </Button>
                 </div>
+              </div>
+              <div className='w-full flex justify-center'>
+                {isCVUploaded && <p className="text-green-600 mb-4 md:mb-0">CV Subido Correctamente!</p>}
               </div>
             </form>
           </div>

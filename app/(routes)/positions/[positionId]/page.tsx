@@ -20,7 +20,7 @@ const PositionPage: React.FC<PositionPageProps> = async ({
   }
 
   return (
-    <div className='pt-[120px] bg-white'>
+    <div className='pt-[120px] min-h-[85vh] bg-white'>
       <Container>
         <div
           className="group cursor-pointer bg-[#E8E8E8] rounded-xl p-4 space-y-4 w-full flex place-content-between items-center"

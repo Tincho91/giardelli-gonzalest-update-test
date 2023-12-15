@@ -5,7 +5,7 @@ import Spinner from './ui/spinner';
 import toast from 'react-hot-toast';
 
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const [isSubmitting, setSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -19,38 +19,34 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  
     try {
       setSubmitting(true);
-      const response = await fetch('/api/send', {
+  
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-
-      console.log('Response:', response);
-
-
+  
       if (response.ok) {
-
-        setFormData({ name: '', email: '', message: '' });
-
-        toast.success('El email se envió correctamente.');
+        toast.success('Email enviado exitosamente');
+        // Puedes hacer más acciones aquí si es necesario después de enviar el correo
       } else {
-
-        toast.error('Hubo un error al enviar el email.');
+        toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.');
       }
-
-    } catch (error: any) {
-      console.error('Error submitting form:', error.message);
-
+    } catch (error) {
+      console.error('Error al enviar el email:', error);
+      toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.');
     } finally {
       setSubmitting(false);
     }
   };
+
 
 
   return (
