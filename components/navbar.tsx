@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
           <div className="ml-4 flex md:hidden lg:flex lg:ml-0 gap-x-2">
             <Link href="/">
-              <img src="/brand.png" alt="CONSULTORA" className="h-9 sm:h-10 w-full max-w-[80%]" />
+              <img src="/brand.png" alt="CONSULTORA" className="h-9 sm:h-10 w-full object-contain" />
             </Link>
           </div>
           <div className="ml-4 lg:ml-0 gap-x-2 hidden md:flex lg:hidden">
@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <MainNav />
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden ml-4">
             <MobileNav />
           </div>
         </div>
