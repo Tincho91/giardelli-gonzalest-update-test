@@ -1,7 +1,6 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import axios from 'axios';
 import { CldUploadWidget } from 'next-cloudinary';
-import getPosition from '@/actions/get-position';
 import getAreasOfInterest from '@/actions/get-areasOfInterest';
 import toast from 'react-hot-toast';
 
@@ -69,9 +68,16 @@ const UserUpdateForm: React.FC<UserUpdateFormProps> = ({ user }) => {
         areaOfInterestId: selectedArea
       });
 
-      toast.success('User updated successfully!');
+      toast.success('Usuario Actualizado!', {
+        position: 'bottom-center',
+      });
+
     } catch (error) {
-      toast.error('Error updating user.');
+
+      toast.error('Error al actualizar.', {
+        position: 'bottom-center',
+      });
+
     } finally {
       setIsLoading(false);
     }

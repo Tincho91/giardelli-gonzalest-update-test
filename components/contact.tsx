@@ -34,14 +34,20 @@ const Contact: React.FC = () => {
       });
   
       if (response.ok) {
-        toast.success('Email enviado exitosamente');
+        toast.success('Email enviado exitosamente', {
+          position: 'bottom-center',
+        });
         // Puedes hacer más acciones aquí si es necesario después de enviar el correo
       } else {
-        toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.');
+        toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.', {
+          position: 'bottom-center',
+        });
       }
     } catch (error) {
       console.error('Error al enviar el email:', error);
-      toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.');
+      toast.error('Error al enviar el email. Por favor, inténtalo de nuevo.', {
+        position: 'bottom-center',
+      });
     } finally {
       setSubmitting(false);
     }

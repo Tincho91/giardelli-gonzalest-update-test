@@ -37,42 +37,55 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
 
   const handleApplyClick = async () => {
     try {
-      if (currentUserData?.id) {
-        const formData = {
-          positionId: data?.id
+      if (!currentUserData?.id) {
+        toast.error("Primero, completa tu perfil.", {
+          position: 'bottom-center',
+        });
+        return;
+      }
+
+      const formData = {
+        positionId: data?.id,
+      };
+
+      const response = await axios.patch(
+        `${process.env.NEXT_PUBLIC_API_URL}/users/${currentUserData.id}`,
+        formData
+      );
+
+      if (response.status === 200) {
+        const emailData = {
+          user: {
+            name: currentUserData.name,
+            cv: currentUserData.cvUrl,
+            email: currentUserData.email,
+          },
+          application: {
+            name: data.name, // Asumiendo que data contiene la información del trabajo
+          },
         };
 
-        const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/users/${currentUserData.id}`, formData);
+        // Email para Giardelli-Gonzalez
+        await axios.post('/api/userApplicationEmail', emailData);
 
-        if (response.status === 200) {
-          const emailData = {
-            user: {
-              name: currentUserData.name,
-              cv: currentUserData.cvUrl,
-              email: currentUserData.email,
-            },
-            application: {
-              name: data.name, // Assuming data contains the job information
-            },
-          }; 
+        // Email para usuario
+        await axios.post('/api/userNotificationEmail', emailData);
 
-          // Email para Giardelli-Gonzalez
-          await axios.post('/api/userApplicationEmail', emailData);
-
-          // Email para usuario
-          await axios.post('/api/userNotificaitonEmail', emailData);
-
-          toast.success("Successfully applied for the position.");
-          Router.reload();
-        } else {
-          toast.error("Failed to apply for the position.");
-        }
+        toast.success("Aplicación exitosa para el puesto.", {
+          position: 'bottom-center',
+        });
+        Router.reload();
       } else {
-        toast.error("First, you need to complete your profile.");
+        toast.error(`Falló la aplicación para el puesto. Estado: ${response.status}`, {
+          position: 'bottom-center',
+        });
+        console.error("Error aplicando para el puesto:", response.data);
       }
     } catch (error) {
-      toast.error("An error occurred while applying for the position.");
-      console.error("Error applying for position:", error);
+      toast.error("Se produjo un error al aplicar para el puesto.", {
+        position: 'bottom-center',
+      });
+      console.error("Error aplicando para el puesto:", error);
     }
   };
 

@@ -1,17 +1,12 @@
 "use client";
 
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { CldUploadWidget } from 'next-cloudinary';
-import { Upload } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { AreaOfInterest } from '@/types';
-
-import getAreasOfInterest from '@/actions/get-areasOfInterest';
 
 import { Input } from './ui/input';
 import { Button } from '@/components/ui/button';
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectLabel, SelectItem } from './ui/select';
 import Spinner from '@/components/ui/spinner';
 import Container from './ui/container';
 
@@ -49,7 +44,9 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
     setIsLoading(true);
 
     if (!isCVUploaded) {
-      toast.error('Please upload your CV before submitting.');
+      toast.error('Please upload your CV before submitting.', {
+        position: 'bottom-center', // Set the position to bottom-center
+      });
       setIsLoading(false);
       return;
     }
@@ -66,11 +63,19 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
         cvUrl,
         areaOfInterestId: selectedArea,
       });
-      toast.success('User created successfully!');
+
+      toast.success('Usuario Creado!', {
+        position: 'bottom-center', //
+      });
+
       console.log('User created:', response.data);
       location.reload();
     } catch (error) {
-      toast.error('Error creating user.');
+
+      toast.error('Error creando el Usuario', {
+      position: 'bottom-center', //
+    });
+
       console.log('Error creating user:', error);
     } finally {
       setIsLoading(false);
