@@ -163,7 +163,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                       <Button
                         type="button"
                         onClick={(e) => open()}
-                        className="px-4 py-2 mb-4 md:mb-0 text-customOrange border-customOrange border-[2px] bg-white rounded-3xl hover:bg-customOrange hover:text-white w-full md:w-auto"
+                        className="text-md px-4 py-2 mb-4 md:mb-0 text-customOrange border-customOrange border-[2px] bg-white rounded-3xl hover:bg-customOrange hover:text-white w-full md:w-auto"
                       >
                         ADJUNTAR CV
                       </Button>
@@ -172,7 +172,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                   
                   <Button
                     type="submit"
-                    className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
+                    className="text-md px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
                   >
                     {isLoading ? <Spinner /> : 'CREAR PERFIL'}
                   </Button>

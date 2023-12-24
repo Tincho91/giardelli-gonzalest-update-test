@@ -25,7 +25,7 @@ const HeroFooter = () => {
       </Container>
       <div className="w-full relative">
         <img src="/images/vector.png" alt="Vector" className="absolute top-0 w-full mt-[-21%]" />
-        <img src="/images/heroFooterBanner.png" alt="Banner" className="mx-auto w-full max-h-[100vh] object-cover object-top" />
+        <img src="/images/heroFooterBanner.png" alt="Banner" className="mx-auto w-full max-h-[100vh] object-cover object-top hero-footer" />
       </div>
     </div>
   )

@@ -74,7 +74,8 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
         toast.success("Aplicación exitosa para el puesto.", {
           position: 'bottom-center',
         });
-        Router.reload();
+        window.location.reload();
+
       } else {
         toast.error(`Falló la aplicación para el puesto. Estado: ${response.status}`, {
           position: 'bottom-center',
@@ -98,7 +99,9 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
       <div className="flex items-center gap-x-3 align-middle">
         {currentUserData ? (
           hasApplied ? (
-            <div><p className='text-customBlue text-bold'>Tu aplicación está en revisión</p></div>
+            <Button className="px-4 py-[25px] text-white bg-customOrange rounded-3xl focus:outline-none border-none w-full md:w-auto">
+              Aplicación en revisión
+            </Button>
           ) : (
             <Button onClick={handleApplyClick} className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto">
               Aplicar

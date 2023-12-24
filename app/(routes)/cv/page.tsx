@@ -20,23 +20,27 @@ const CVPage: React.FC = () => {
   useEffect(() => {
     setLoading(true);
 
-    if (!user) {
-      redirect('/sign-in');
-    }
+    // Check if there is a user and wait for a short duration
+    const checkUserAndLoadData = async () => {
+      if (!user) {
+        // Simulate a short delay with setTimeout
+        await new Promise(resolve => setTimeout(resolve, 500));
 
-    const fetchData = async () => {
-      const [usersFromDB, fetchedAreasOfInterest] = await Promise.all([
-        getUsers(),
-        getAreasOfInterest(),
-      ]);
+        window.location.href = '/sign-in';
+      } else {
+        const [usersFromDB, fetchedAreasOfInterest] = await Promise.all([
+          getUsers(),
+          getAreasOfInterest(),
+        ]);
 
-      const foundUser = usersFromDB.find(u => u.clerkId === user?.id);
-      setCurrentUserData(foundUser ?? null);
-      setAreasOfInterest(fetchedAreasOfInterest);
-      setLoading(false);
+        const foundUser = usersFromDB.find(u => u.clerkId === user?.id);
+        setCurrentUserData(foundUser ?? null);
+        setAreasOfInterest(fetchedAreasOfInterest);
+        setLoading(false);
+      }
     };
 
-    fetchData();
+    checkUserAndLoadData();
   }, [user]);
 
   if (loading) {
@@ -53,8 +57,8 @@ const CVPage: React.FC = () => {
   }
 
   return currentUserData
-    ? <UserUpdateForm user={currentUserData} />
-    : <UserUploadForm initialUserData={user?.id ?? ""} areasOfInterest={areasOfInterest} />;
+  ? <UserUpdateForm user={currentUserData} />
+  : <UserUploadForm initialUserData={user?.id ?? ""} areasOfInterest={areasOfInterest} />;
 };
 
 export default CVPage;

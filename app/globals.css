@@ -73,3 +73,7 @@ body {
 .hero-swiper {
   height: 85vh;
 }
+
+.hero-footer {
+  background-attachment: fixed;
+}
