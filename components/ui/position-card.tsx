@@ -28,7 +28,7 @@ const PositionCard: React.FC<PositionCard> = ({
         <p className="font-semibold text-customOrange group-hover:text-white pb-2">{data.company.name}  |   {data.location.name}   |   {data.modality.name}   |   {data.availability.name}</p>
       </div>
       <div>
-        <p className="font-semibold text-customBlue">{data.shortDescription}</p>
+        <p className="font-semibold text-customBlue truncate">{data.shortDescription}</p>
       </div>
     </div>
   );

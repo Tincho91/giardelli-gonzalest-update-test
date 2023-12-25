@@ -24,22 +24,27 @@ const PositionPage: React.FC<PositionPageProps> = async ({
     <div className='pt-[120px] min-h-[85vh] bg-white'>
       <Container>
         <div className="group cursor-pointer bg-[#E8E8E8] rounded-xl p-4 space-y-4 w-full flex flex-col sm:flex-row items-center h-full">
-          <div className="mb-4 sm:mb-0 items-center">
-            <div>
-              <p className="font-semibold text-lg uppercase text-customOrange pb-3">{position.name}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-customOrange pb-2">{position.company.name} | {position.location.name} | {position.modality.name} | {position.availability.name}</p>
-            </div>
-            <div>
-              <p className="font-semibold text-customBlue">{position.shortDescription}</p>
-            </div>
+        <div
+          className="group cursor-pointer bg-[#E8E8E8] rounded-xl p-4 space-y-4 w-full overflow-hidden flex flex-col transition-all duration-300"
+        >
+          <div>
+            <p className="font-semibold text-lg uppercase text-customOrange e pb-3 ">{position.name}</p>
           </div>
+          <div>
+            <p className="font-semibold text-customOrange pb-2">{position.company.name}  |   {position.location.name}   |   {position.modality.name}   |   {position.availability.name}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-customBlue truncate">{position.shortDescription}</p>
+          </div>
+        </div>
 
           <div className="inline-block items-center sm:ml-auto">
             <Apply data={position} />
           </div>
         </div>
+
+
+        
 
 
         <div className="py-10">
