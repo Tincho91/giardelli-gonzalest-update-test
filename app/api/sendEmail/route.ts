@@ -20,7 +20,11 @@ export async function POST(request: any) {
             subject: "Contacto desde WEB",
             html: `
                 <h3>Consulta desde Web</h3>
+                <br>
+                <br>
                 <p>De: ${formData.name},  &lt;${formData.email}&gt;</p>
+                <br>
+                <br>
                 <p>${formData.message}</p>
             `
         };

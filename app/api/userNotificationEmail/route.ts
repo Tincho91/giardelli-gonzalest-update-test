@@ -19,7 +19,17 @@ export async function POST(request: any) {
             to: formData.user.email,
             subject: "Confirmación de aplicación a empleo",
             html: `
-                <h3>Su aplicación ha sido recibida correctamente. Nos pondremos en contacto con usted en breve.</h3>
+                <h3>
+                ¡Hola! Recibimos tu aplicación para el puesto "${formData.application.name}". 
+                <br>
+                <br>
+                Desde nuestro equipo, vamos a estar revisando tu CV y si tu perfil coincide con las necesidades que estamos buscando, nos pondremos en contacto para coordinar una entrevista.
+                ¡Agradecemos tu interés en participar de este proceso de selección! 
+                <br>
+                <br>
+                Saludos,
+                Giardelli & Gonzalez.
+                </h3>
             `
         };
 

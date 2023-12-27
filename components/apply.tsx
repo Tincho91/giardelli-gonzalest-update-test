@@ -59,6 +59,7 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
             name: currentUserData.name,
             cv: currentUserData.cvUrl,
             email: currentUserData.email,
+            phone: currentUserData.phoneNumber,
           },
           application: {
             name: data.name, // Asumiendo que data contiene la información del trabajo

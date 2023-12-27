@@ -16,20 +16,18 @@ export async function POST(request: any) {
 
         const mailOptions = {
             from: process.env.SMTP_EMAIL,
-            to: process.env.SMTP_EMAIL,
-            subject: "Aplicación de usuario a Puesto",
+            to: formData.user.email,
+            subject: "Confirmación de registro",
             html: `
-                <h3>Un usuario ha aplicado a un puesto de trabajo:</h3>
-                <br>
-                <p>De: ${formData.user.name}</p>
-                <br>
-                <p>Email: ${formData.user.email}</p>
-                <br>
-                <p>Teléfono: ${formData.user.phone}</p>
-                <br>
-                <p>Puesto: ${formData.application.name}</p>
-                <br>
-                <p>Currículum: ${formData.user.cv}</p>
+            ¡Hola! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
+            <br>
+            <br>
+            Si tu perfil coincide con alguna de nuestras búsquedas activas, nos pondremos en contacto para coordinar una entrevista.
+            Agradecemos tu interés en formar parte de nuestro equipo! 
+            <br>
+            <br>
+            Saludos,
+            Giardelli & Gonzalez
             `
         };
 

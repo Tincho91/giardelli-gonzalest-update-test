@@ -17,19 +17,18 @@ export async function POST(request: any) {
         const mailOptions = {
             from: process.env.SMTP_EMAIL,
             to: process.env.SMTP_EMAIL,
-            subject: "Aplicación de usuario a Puesto",
+            subject: "Nuevo Registro de Usuario",
             html: `
-                <h3>Un usuario ha aplicado a un puesto de trabajo:</h3>
-                <br>
-                <p>De: ${formData.user.name}</p>
-                <br>
-                <p>Email: ${formData.user.email}</p>
-                <br>
-                <p>Teléfono: ${formData.user.phone}</p>
-                <br>
-                <p>Puesto: ${formData.application.name}</p>
-                <br>
-                <p>Currículum: ${formData.user.cv}</p>
+            Un nuevo usuario se subscribió en la web:
+            <br>
+            <br>
+            Nombre: ${formData.user.name}
+            <br>
+            <br>
+            CV: ${formData.user.cv}
+            <br>
+            <br>
+            Email: ${formData.user.email}
             `
         };
 

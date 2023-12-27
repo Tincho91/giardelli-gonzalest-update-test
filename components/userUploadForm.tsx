@@ -64,19 +64,29 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
         areaOfInterestId: selectedArea,
       });
 
+      const emailData = {
+        user: {
+          name: name,
+          cv: cvUrl,
+          email: email,
+        },
+      };
+
+      await axios.post('/api/userRegisterEmail', emailData);
+
+      await axios.post('/api/userRegisterNotification', emailData);
+
       toast.success('Usuario Creado!', {
         position: 'bottom-center', //
       });
 
-      console.log('User created:', response.data);
       location.reload();
     } catch (error) {
 
       toast.error('Error creando el Usuario', {
-      position: 'bottom-center', //
-    });
+        position: 'bottom-center', //
+      });
 
-      console.log('Error creating user:', error);
     } finally {
       setIsLoading(false);
     }
@@ -157,7 +167,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                   </select>
                 </div>
                 <div className="flex flex-col md:flex-row space-x-0 md:space-x-4 md:w-2/3 md:justify-end mt-5">
-                  {/*// @ts-ignore */} 
+                  {/*// @ts-ignore */}
                   <CldUploadWidget uploadPreset="d2obllus" onUpload={onUpload}>
                     {({ open }) => (
                       <Button
@@ -169,7 +179,7 @@ const UserUploadForm: React.FC<UserUploadFormProps> = ({ initialUserData, areasO
                       </Button>
                     )}
                   </CldUploadWidget>
-                  
+
                   <Button
                     type="submit"
                     className="text-md px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none focus:bg-customBlue-dark border-none w-full md:w-auto"
