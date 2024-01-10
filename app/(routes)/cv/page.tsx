@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { redirect } from 'next/navigation';
 import { User } from '@/types';
 import { AreaOfInterest } from '@/types';
 import { useUser } from '@clerk/clerk-react';
