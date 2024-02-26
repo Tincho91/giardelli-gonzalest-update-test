@@ -62,7 +62,7 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
             phone: currentUserData.phoneNumber,
           },
           application: {
-            name: data.name, // Asumiendo que data contiene la información del trabajo
+            name: data.name,
           },
         };
 
@@ -110,8 +110,15 @@ const Apply: React.FC<ApplyProps> = ({ data, onClose, isShortDescription }) => {
             </Button>
           )
         ) : (
-          <div>
-            <p className='text-customBlue align-middle'>Primero debes completar tu perfil<a href="/cv"><Button className='ml-3 px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none w-full md:w-auto'>AQUÍ</Button></a></p>
+          <div className="flex flex-col items-center justify-center text-center">
+            <p className="text-customBlue">
+              Primero debes completar tu perfil
+            </p>
+            <a href="/cv" className="mt-2">
+              <Button className="px-4 py-2 text-white bg-customOrange rounded-3xl hover:bg-customBlue focus:outline-none border-none">
+                AQUÍ
+              </Button>
+            </a>
           </div>
         )}
       </div>
