@@ -1,14 +1,6 @@
 "use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-
-// import required modules
-import { Autoplay, FreeMode } from 'swiper/modules';
 import Marquee from 'react-fast-marquee';
-import Container from './ui/container';
 
 const Clients = () => {
 

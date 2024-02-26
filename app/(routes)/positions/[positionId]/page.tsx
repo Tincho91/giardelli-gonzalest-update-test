@@ -2,6 +2,7 @@ import Apply from '@/components/apply';
 import getPosition from '@/actions/get-position';
 import Container from '@/components/ui/container';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 export const revalidate = 0;
 
@@ -51,7 +52,7 @@ const PositionPage: React.FC<PositionPageProps> = async ({
           <div>
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
               <p className='text-customBlue'>
-                <ReactMarkdown>{position.longDescription}</ReactMarkdown>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{position.longDescription}</ReactMarkdown>
               </p>
             </div>
           </div>
