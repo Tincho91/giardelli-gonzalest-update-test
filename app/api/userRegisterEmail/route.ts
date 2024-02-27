@@ -22,31 +22,23 @@ export async function POST(request: any) {
             <h4>
                 ¡Hola! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
             </h4>
-
             <br>
             <br>
-
-            <h5>
+            <h4>
                 Si tu perfil coincide con alguna de nuestras búsquedas activas, nos pondremos en contacto para coordinar una entrevista.
                 ¡Agradecemos tu interés en formar parte de nuestro equipo!
-            </h5>
-
+            </h4>
             <br>
             <br>
-
-            <h5>
+            <h4>
                 Saludos,
-            </h5>
-
+            </h4>
             <br>
-
-            <h5>
+            <h4>
                 Giardelli & Gonzalez
-            </h5>
-
+            </h4>
             <br>
-
-            <img src="https://giardelli-gonzalez-web.vercel.app/brand.png" alt="Logo" style="width: 100px; height: auto;">
+            <img src="https://giardelli-gonzalez-web.vercel.app/brand.png" alt="Logo" style="width: 250px; height: auto;">
     
             `
         };
