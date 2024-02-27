@@ -19,17 +19,24 @@ export async function POST(request: any) {
             to: formData.user.email,
             subject: "Confirmación de aplicación a empleo",
             html: `
-                <h3>
-                ¡Hola! Recibimos tu aplicación para el puesto "${formData.application.name}". 
-                <br>
-                <br>
-                Desde nuestro equipo, vamos a estar revisando tu CV y si tu perfil coincide con las necesidades que estamos buscando, nos pondremos en contacto para coordinar una entrevista.
-                ¡Agradecemos tu interés en participar de este proceso de selección! 
-                <br>
-                <br>
+            <h4>
+                ¡Hola ${formData.user.name}! Recibimos tu aplicación al puesto "${formData.application.name}"
+            </h4>
+            <br>
+            <h4>
+                Desde nuestro equipo, vamos a estar revisando tu CV y si tu perfil se ajusta a los requisitos de la búsqueda, nos pondremos en contacto para coordinar una entrevista.
+            </h4>
+            <h4>
+                ¡Agradecemos tu tiempo e interés en participar de este proceso de selección!
+            </h4>
+            <br>
+            <h4>
                 Saludos,
-                Giardelli & Gonzalez.
-                </h3>
+            </h4>
+            <h4>
+                Giardelli & Gonzalez
+            </h4>
+            <img src="https://giardelli-gonzalez-web.vercel.app/brand.png" alt="Logo" style="width: 250px; height: auto;">
             `
         };
 
