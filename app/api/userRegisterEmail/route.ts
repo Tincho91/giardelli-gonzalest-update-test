@@ -20,7 +20,7 @@ export async function POST(request: any) {
             subject: "Confirmación de registro",
             html: `
             <h4>
-                ¡Hola! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
+                ¡Hola ${formData.user.name}! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
             </h4>
             <br>
             <br>
