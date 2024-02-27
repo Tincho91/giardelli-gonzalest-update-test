@@ -22,7 +22,6 @@ export async function POST(request: any) {
             <h4>
                 ¡Hola ${formData.user.name}! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
             </h4>
-            <br>
             <h4>
                 Si tu perfil coincide con alguna de nuestras búsquedas activas, nos pondremos en contacto para coordinar una entrevista.
                 ¡Agradecemos tu interés en formar parte de nuestro equipo!
