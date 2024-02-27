@@ -22,7 +22,6 @@ export async function POST(request: any) {
             <h4>
                 ¡Hola ${formData.user.name}! Recibimos tu aplicación al puesto "${formData.application.name}"
             </h4>
-            <br>
             <h4>
                 Desde nuestro equipo, vamos a estar revisando tu CV y si tu perfil se ajusta a los requisitos de la búsqueda, nos pondremos en contacto para coordinar una entrevista.
             </h4>
