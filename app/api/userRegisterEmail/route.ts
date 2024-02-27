@@ -19,15 +19,35 @@ export async function POST(request: any) {
             to: formData.user.email,
             subject: "Confirmación de registro",
             html: `
-            ¡Hola! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
+            <h4>
+                ¡Hola! Gracias por sumarte a nuestra web! Ya sos parte de nuestra base de datos.
+            </h4>
+
             <br>
             <br>
-            Si tu perfil coincide con alguna de nuestras búsquedas activas, nos pondremos en contacto para coordinar una entrevista.
-            Agradecemos tu interés en formar parte de nuestro equipo! 
+
+            <h5>
+                Si tu perfil coincide con alguna de nuestras búsquedas activas, nos pondremos en contacto para coordinar una entrevista.
+                ¡Agradecemos tu interés en formar parte de nuestro equipo!
+            </h5>
+
             <br>
             <br>
-            Saludos,
-            Giardelli & Gonzalez
+
+            <h5>
+                Saludos,
+            </h5>
+
+            <br>
+
+            <h5>
+                Giardelli & Gonzalez
+            </h5>
+
+            <br>
+
+            <img src="https://giardelli-gonzalez-web.vercel.app/brand.png" alt="Logo" style="width: 100px; height: auto;">
+    
             `
         };
 
