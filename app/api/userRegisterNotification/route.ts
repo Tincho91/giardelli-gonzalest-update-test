@@ -21,12 +21,9 @@ export async function POST(request: any) {
             html: `
             Un nuevo usuario se subscribió en la web:
             <br>
-            <br>
             Nombre: ${formData.user.name}
             <br>
-            <br>
             CV: ${formData.user.cv}
-            <br>
             <br>
             Email: ${formData.user.email}
             `
