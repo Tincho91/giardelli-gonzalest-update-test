@@ -18,11 +18,11 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem; /* Espacio entre los puntos */
+  gap: 0.5rem;
   position: absolute;
   transform: translateY(2rem);
-  z-index: 9999; /* Asegúrate de que el índice z sea suficientemente alto */
-  width: auto; /* Asegúrate de que el contenedor sea del ancho adecuado */
+  z-index: 9999;
+  width: auto;
 }
 
 .swiper-pagination-bullet {
