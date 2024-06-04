@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 interface AccordionItem {
   title: string;
-  content: string;
+  content: React.ReactNode;
   iconInactive: string;
   iconActive: string;
 }
