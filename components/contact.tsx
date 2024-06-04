@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
 
 
   return (
-    <div className='bg-customGrey'>
+    <div className='bg-[#E8E8E8] pb-10'>
       <div className="mx-auto md:max-w-7xl md:px-[3%]">
         <div className="flex">
           {/* Imagen en la mitad izquierda */}
@@ -76,42 +76,36 @@ const Contact: React.FC = () => {
             {/* Formulario */}
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Nombre y Apellido
-                </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
+                  placeholder='Nombre y Apellido'
+                  className="mt-1 p-1 w-full bg-transparent border-[2px] border-customBlue rounded-lg text-customBlue italic placeholder-gray-600"
                   required
                   onChange={handleChange}
                 />
               </div>
 
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Correo Electrónico
-                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
+                  placeholder='Correo Electrónico'
+                  className="mt-1 p-1 w-full bg-transparent border-[2px] border-customBlue rounded-lg text-customBlue italic placeholder-gray-600"
                   required
                   onChange={handleChange}
                 /> 
               </div>
 
               <div className="mb-4">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Mensaje
-                </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={7}
-                  className="mt-1 p-1 w-full border bg-transparent border-customBlue rounded-3xl text-customBlue"
+                  placeholder='Mensaje'
+                  className="mt-1 p-1 w-full bg-transparent border-[2px] border-customBlue rounded-lg text-customBlue italic placeholder-gray-600"
                   required
                   onChange={handleChange}
                 ></textarea>

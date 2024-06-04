@@ -25,7 +25,7 @@ const Clients = () => {
   ];
 
   return (
-    <div id='clientes' className="client-carousel bg-customGrey py-10 z-50">
+    <div id='clientes' className="client-carousel bg-[#E8E8E8] py-10 z-50">
         <p className="text-[8vw] md:text-[4.4vw] xl:text-[60px] font-extrabold mt-10 pb-16 text-customBlue text-center">ALGUNOS DE NUESTROS CLIENTES</p>
         <Marquee
           direction="left"
