@@ -13,14 +13,25 @@ const HeroFooter = () => {
     <div className='bg-customBlue'>
       <div className=' max-w-[1200px] mx-auto'>
         <Container>
-          <div className="flex flex-col items-center pt-5">
+          <FadeInFromTop>
+            <div className="flex flex-col items-center py-5 lg:py-10">
 
-            <p className="text-white text-center font-normal lg:text-lg leading-[45px] lg:leading-[60px] px-10 mb-5 z-40">
-              Somos un <span className="text-white font-black">equipo de profesionales</span> provenientes de distintas disciplinas que abarca de forma amplia, las problemáticas de las organizaciones a través del <span className="text-white font-black">servicio de consultoría</span>.
-              Colaboramos desde el pensamiento, el análisis y las estrategias, para que los espacios de trabajo sean más eficientes y saludables y las unidades de negocio y grupos empresarios, puedan <span className="text-white font-black">desplegar todo su potencial</span>, superando los límites que se fueron trazando por distintas circunstancias.
-            </p>
-
-          </div>
+              <p className="text-white text-center font-normal text-lg lg:text-xl leading-[35px] px-10 mb-5 z-40">
+                Somos un equipo de
+                <span className="text-white font-bold text-xl lg:text-2xl"> profesionales </span>
+                provenientes de distintas disciplinas que abarca de forma amplia, las problemáticas de las organizaciones a través del servicio de
+                <span className="text-white font-black text-xl lg:text-2xl"> consultoría</span>.<br /><br />
+                Guiamos
+                <span className="text-white font-black text-xl lg:text-2xl"> procesos de cambio organizacional</span>
+                , en un trabajo conjunto con quienes son parte de la empresa.<br /><br />
+                Colaboramos desde el pensamiento, el análisis y las estrategias, para que los espacios de trabajo sean más
+                <span className="text-white font-black text-xl lg:text-2xl"> eficientes y saludables </span>
+                y las unidades de negocio y grupos empresarios, puedan
+                <span className="text-white font-black text-xl lg:text-2xl"> desplegar todo su potencial</span>, superando los límites que se fueron trazando por distintas circunstancias.
+              </p>
+               
+            </div>
+          </FadeInFromTop>
         </Container>
         <div className="w-full relative max-h-[75vh]">
           <img src="/images/heroFooterBanner.png" alt="Banner" className="mx-auto w-full object-cover object-top hero-footer" />
