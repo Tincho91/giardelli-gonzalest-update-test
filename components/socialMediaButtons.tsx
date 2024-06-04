@@ -29,7 +29,7 @@ const SocialMediaButtons: React.FC = () => {
           className="whatsapp-button"
           style={{
             position: 'fixed',
-            bottom: 100,
+            bottom: 200,
             right: 25,
             zIndex: 1000,
             borderRadius: '50%',
