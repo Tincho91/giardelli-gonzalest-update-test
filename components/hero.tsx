@@ -12,8 +12,8 @@ import FadeInFromTop from './animations/fadeInFromTop';
 
 const Hero = () => {
   return (
-    <div className='bg-[#143241] max-h-[85vh]'>
-      <div className='md:py-7 xl:px-0 md:px-12 relative max-w-[1200px] mx-auto max-h-[85vh]'>
+    <div className='bg-[#143241]'>
+      <div className='md:py-7 xl:px-0 md:px-12 relative max-w-[1200px] mx-auto'>
         <div className="relative">
           <Swiper
             effect={'fade'}
@@ -62,6 +62,7 @@ const Hero = () => {
                 style={{
                   display: 'flex',
                   height: "100%",
+                  maxHeight: "80vh",
                   alignItems: 'flex-start',
                   justifyContent: 'flex-end',
                   position: 'relative'
