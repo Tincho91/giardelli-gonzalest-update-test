@@ -21,10 +21,10 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     try {
       setSubmitting(true);
-  
+
       const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: {
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         toast.success('Email enviado exitosamente', {
           position: 'bottom-center',
@@ -58,22 +58,27 @@ const Contact: React.FC = () => {
   return (
     <div className='bg-[#E8E8E8] pb-10'>
       <div className="mx-auto md:max-w-7xl md:px-[3%]">
-        <div className="flex">
-          {/* Imagen en la mitad izquierda */}
-          <div className="w-1/2">
-            <div
-              style={{
-                backgroundImage: 'url(/images/contactForm.png)',
-              }}
-              className="w-full h-full max-h-[800px] bg-cover bg-center"
+        <div className="flex flex-col-reverse sm:flex-row">
+          {/* Imagen */}
+          <div className="w-full sm:w-1/2 h-64 sm:h-auto">
+            {/* Imagen para dispositivos pequeños */}
+            <img
+              src="/images/contactFormS.jpg"
+              alt="Contact Form Small"
+              className="w-full h-full object-cover sm:hidden"
+            />
+            {/* Imagen para dispositivos medianos y grandes */}
+            <img
+              src="/images/contactForm.png"
+              alt="Contact Form"
+              className="w-full h-full object-cover hidden sm:block"
             />
           </div>
 
-          {/* Formulario en la mitad derecha */}
-          <div className="w-1/2 p-4 align-middle my-auto">
+          {/* Formulario */}
+          <div className="w-full sm:w-1/2 p-4 align-middle my-auto">
             <h2 className="text-2xl text-center text-customBlue font-bold mb-4">ENVIANOS TU CONSULTA</h2>
 
-            {/* Formulario */}
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <input
@@ -96,7 +101,7 @@ const Contact: React.FC = () => {
                   className="mt-1 p-1 w-full bg-transparent border-[2px] border-customBlue rounded-lg text-customBlue italic placeholder-gray-600"
                   required
                   onChange={handleChange}
-                /> 
+                />
               </div>
 
               <div className="mb-4">
