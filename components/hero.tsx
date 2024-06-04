@@ -12,8 +12,8 @@ import FadeInFromTop from './animations/fadeInFromTop';
 
 const Hero = () => {
   return (
-    <div className='bg-[#143241]'>
-      <div className='md:py-7 xl:px-0 md:px-12 relative max-w-[1200px] mx-auto'>
+    <div className='bg-[#143241] max-h-[85vh]'>
+      <div className='md:py-7 xl:px-0 md:px-12 relative max-w-[1200px] mx-auto max-h-[85vh]'>
         <div className="relative">
           <Swiper
             effect={'fade'}
@@ -80,7 +80,7 @@ const Hero = () => {
                   {/* Large screen image */}
                 </div>
 
-                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left`}>
+                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left md:max-w-[70%] xl:max-w-[55%]`}>
                   <FadeInFromTop>
                     <h1 className={`text-white text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3`}>
                       {slide.text}<span className="italic font-[700] inline-block">{slide.highlightedText}</span>{slide.restText}
@@ -91,7 +91,7 @@ const Hero = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="custom-pagination"></div> {/* Contenedor de la paginación */}
+          <div className="custom-pagination"></div>
         </div>
       </div>
     </div>
