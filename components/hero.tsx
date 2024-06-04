@@ -82,8 +82,8 @@ const Hero = () => {
 
                 <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left`}>
                   <FadeInFromTop>
-                    <h1 className={`text-white font-extrabold text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3`}>
-                      {slide.text}<span className="hero-text-border inline-block">{slide.highlightedText}</span>{slide.restText}
+                    <h1 className={`text-white text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3`}>
+                      {slide.text}<span className="italic font-[700] inline-block">{slide.highlightedText}</span>{slide.restText}
                     </h1>
                   </FadeInFromTop>
                 </div>

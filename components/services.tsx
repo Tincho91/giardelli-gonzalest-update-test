@@ -6,43 +6,43 @@ import CustomAccordion from './ui/customAccordion';
 const Services: React.FC = () => {
   const items = [
     {
-      title: 'Desarrollo Frontend',
+      title: 'Gestionamos procesos de cambio organizacional',
       iconInactive: '/images/1.png',
       iconActive: '/images/1n.png',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      title: 'Desarrollo Backend',
+      title: 'Facilitamos el traspaso generacional en empresas familiares',
       iconInactive: '/images/2.png',
       iconActive: '/images/2n.png',
       content: 'Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.'
     },
     {
-      title: 'Base de Datos',
+      title: 'Intervenimos para la mejora de conflictos laborales',
       iconInactive: '/images/3.png',
       iconActive: '/images/3n.png',
       content: 'Curabitur aliquet quam id dui posuere blandit.'
     },
     {
-      title: 'Desarrollo Frontend',
+      title: 'Construimos y desarrollamos áreas de recursos humanos',
       iconInactive: '/images/4.png',
       iconActive: '/images/4n.png',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      title: 'Desarrollo Backend',
+      title: 'Seleccionamos mandos medios y cargos gerenciales',
       iconInactive: '/images/5.png',
       iconActive: '/images/5n.png',
       content: 'Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.'
     },
     {
-      title: 'Base de Datos',
+      title: 'Realizamos capacitaciones para gestar transformaciones',
       iconInactive: '/images/6.png',
       iconActive: '/images/6n.png',
       content: 'Curabitur aliquet quam id dui posuere blandit.'
     },
     {
-      title: 'Base de Datos',
+      title: 'Desarrollamos nuevas dinámicas en los sistemas de comercialización',
       iconInactive: '/images/7.png',
       iconActive: '/images/7n.png',
       content: 'Curabitur aliquet quam id dui posuere blandit.'

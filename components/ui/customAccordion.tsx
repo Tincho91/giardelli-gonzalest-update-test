@@ -44,7 +44,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
                 />
               </motion.div>
               <motion.span
-                className="flex-grow text-left mx-5 bg-[#D9D9D9] py-2 px-7 text-customBlue"
+                className="flex-grow text-left mx-5 bg-[#D9D9D9] py-2 px-7 text-customBlue italic"
                 layout
                 transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
               >
