@@ -61,7 +61,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
             transition={{ duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
             className="overflow-hidden"
           >
-            <div className="py-4 px-5">
+            <div className="py-4 px-1 md:px-5">
               {item.content}
             </div>
           </motion.div>
