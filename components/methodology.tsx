@@ -16,7 +16,7 @@ const Methodology = () => {
 
         <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 pb-10 items-center">
           <div className="md:col-start-1 md:col-end-2 flex flex-col items-center md:items-start mb-4 md:mb-0">
-            <p className="text-white text-center font-normal text-lg lg:text-xl leading-[35px] px-10 mb-5 z-40">
+            <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[30px] px-10 mb-5 z-40">
               El trabajo de la consultora comienza con una entrevista de 
               <span className="text-white font-bold text-xl lg:text-2xl"> mutuo conocimiento</span> 
               en la que evaluamos la pertinencia de un futuro trabajo conjunto y sus diferentes 

@@ -14,9 +14,9 @@ const HeroFooter = () => {
       <div className=' max-w-[1200px] mx-auto'>
         <Container>
           <FadeInFromTop>
-            <div className="flex flex-col items-center py-5 lg:py-10">
+            <div className="flex flex-col items-center pt-10 lg:py-14">
 
-              <p className="text-white text-center font-normal text-lg lg:text-xl leading-[35px] px-10 mb-5 z-40">
+              <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
                 Somos un equipo de
                 <span className="text-white font-bold text-xl lg:text-2xl"> profesionales </span>
                 provenientes de distintas disciplinas que abarca de forma amplia, las problemáticas de las organizaciones a través del servicio de
