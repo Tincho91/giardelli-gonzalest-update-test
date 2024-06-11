@@ -17,7 +17,7 @@ export default function AuthLayout({
       <Container>
         <div className="relative flex flex-col justify-center py-10">
           <FadeInFromTop>
-            <p className="text-center text-customBlue mb-4 text-sm md:text-lg lg:text-xl pb-10">
+            <p className="text-center text-customBlue mb-4 text-md md:text-xl pb-10">
               Realizamos la inclusión de nuevos talentos para ocupar mandos medios y gerenciales en diferentes organizaciones. 
               <br />
               <br />
