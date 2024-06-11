@@ -5,23 +5,20 @@ import Marquee from 'react-fast-marquee';
 const Clients = () => {
 
   const clientImages = [
-    "/images/clients/aguero.png",
-    "/images/clients/aire.png",
-    "/images/clients/antares.png",
-    "/images/clients/cabrales.png",
-    "/images/clients/consca.png",
-    "/images/clients/constructora.png",
-    "/images/clients/cutaneo.png",
-    "/images/clients/delcerro.png",
-    "/images/clients/electroterma.png",
-    "/images/clients/hanna.png",
-    "/images/clients/mccain.png",
-    "/images/clients/nino.png",
-    "/images/clients/optica.png",
     "/images/clients/pepsico.png",
     "/images/clients/pizzolo.png",
+    "/images/clients/optica.png",
+    "/images/clients/antares.png",
+    "/images/clients/cabrales.png",
+    "/images/clients/constructora.png",
+    "/images/clients/electroterma.png",
+    "/images/clients/mccain.png",
+    "/images/clients/aire.png",
     "/images/clients/serymat.png",
-    "/images/clients/tandil.png",
+    "/images/clients/aguero.png",
+    "/images/clients/cutaneo.png",
+    "/images/clients/delcerro.png",
+    "/images/clients/consca.png",
   ];
 
   return (
