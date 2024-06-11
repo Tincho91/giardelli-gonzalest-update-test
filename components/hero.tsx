@@ -33,12 +33,15 @@ const Hero = () => {
               {
                 large: '/images/banner1.png',
                 small: '/images/banner1s.png',
-                text: 'El pensamiento es el',
+                text: 'El pensamiento es el ',
                 highlightedText: 'motor del cambio',
                 restText: '',
                 position: 'bottom-10 left-0 md:top-10',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-left',
+                maxWidth: "50%",
+                maxWidthXL: "30%",
+                bgPosition: "70%",
               },
               {
                 large: '/images/banner2.png',
@@ -49,6 +52,9 @@ const Hero = () => {
                 position: 'bottom-0 left-1/2',
                 translate: '-translate-x-1/2 translate-y-0',
                 align: 'text-center',
+                maxWidth: "70%",
+                maxWidthXL: "50%",
+                bgPosition: "left",
               },
               {
                 large: '/images/banner3.png',
@@ -59,6 +65,9 @@ const Hero = () => {
                 position: 'bottom-10 right-0',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-right',
+                maxWidth: "70%",
+                maxWidthXL: "70%",
+                bgPosition: "right",
               },
             ].map((slide, index) => (
               <SwiperSlide key={index}
@@ -73,18 +82,22 @@ const Hero = () => {
               >
                 <div
                   className="sm:hidden absolute inset-0 bg-cover"
-                  style={{ backgroundImage: `url('${slide.small}')` }}
+                  style={{ 
+                    backgroundImage: `url('${slide.small}')`,
+                  }}
                 >
                   {/* Small screen image */}
                 </div>
                 <div
                   className="hidden sm:block absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url('${slide.large}')` }}
+                  style={{ backgroundImage: `url('${slide.large}')`,
+                  backgroundPosition: slide.bgPosition
+                }}
                 >
                   {/* Large screen image */}
                 </div>
 
-                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left md:max-w-[70%] xl:max-w-[55%]`}>
+                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left max-w-[70%] md:max-w-[${slide.maxWidth}] lg:max-w-[${slide.maxWidthXL}]`}>
                   <FadeInFromTop>
                     <h1 className={`text-white ${slide.align} text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3 justify-center`}>
                       {slide.text}<span className="italic font-[700] inline-block">{slide.highlightedText}</span>{slide.restText}

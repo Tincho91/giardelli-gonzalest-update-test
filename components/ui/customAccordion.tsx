@@ -45,9 +45,9 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({ items }) => {
               </motion.div>
               <motion.span
                 className={expandedIndex === index ? 
-                  "flex-grow text-left mx-5 bg-customOrange py-2 px-7 text-white italic"
+                  "flex-grow text-left font-bold text-xl mx-5 bg-customOrange py-2 px-7 text-white italic"
                    : 
-                  "flex-grow text-left mx-5 bg-[#D9D9D9] py-2 px-7 text-customBlue italic hover:bg-customOrange hover:text-white"} 
+                  "flex-grow text-left font-bold text-xl mx-5 bg-[#D9D9D9] py-2 px-7 text-customBlue italic hover:bg-customOrange hover:text-white"} 
                 layout
                 transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
               >
