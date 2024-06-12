@@ -12,13 +12,18 @@ const Clients = () => {
     "/images/clients/cabrales.png",
     "/images/clients/constructora.png",
     "/images/clients/electroterma.png",
+    "/images/clients/distribuidora.png",
     "/images/clients/mccain.png",
     "/images/clients/aire.png",
     "/images/clients/serymat.png",
     "/images/clients/aguero.png",
     "/images/clients/cutaneo.png",
     "/images/clients/delcerro.png",
+    "/images/clients/napolitano.png",
+    "/images/clients/elmercedino.png",
+    "/images/clients/naturalsur.png",
     "/images/clients/consca.png",
+    "/images/clients/pampaynovillo.png",
   ];
 
   return (
