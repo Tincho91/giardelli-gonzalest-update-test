@@ -39,8 +39,6 @@ const Hero = () => {
                 position: 'bottom-10 left-0 md:top-10',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-left',
-                maxWidth: "50%",
-                maxWidthXL: "30%",
                 bgPosition: "70%",
               },
               {
@@ -52,8 +50,6 @@ const Hero = () => {
                 position: 'bottom-0 left-1/2',
                 translate: '-translate-x-1/2 translate-y-0',
                 align: 'text-center',
-                maxWidth: "70%",
-                maxWidthXL: "50%",
                 bgPosition: "left",
               },
               {
@@ -65,8 +61,6 @@ const Hero = () => {
                 position: 'bottom-10 right-0',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-right',
-                maxWidth: "70%",
-                maxWidthXL: "70%",
                 bgPosition: "right",
               },
             ].map((slide, index) => (
@@ -97,7 +91,7 @@ const Hero = () => {
                   {/* Large screen image */}
                 </div>
 
-                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left max-w-[70%] md:max-w-[${slide.maxWidth}] lg:max-w-[${slide.maxWidthXL}]`}>
+                <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left max-w-[70%] sm:max-w-[50%]`}>
                   <FadeInFromTop>
                     <h1 className={`text-white ${slide.align} text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3 justify-center`}>
                       {slide.text}<span className="italic font-[700] inline-block">{slide.highlightedText}</span>{slide.restText}
