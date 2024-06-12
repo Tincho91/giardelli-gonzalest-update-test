@@ -10,7 +10,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/1.png',
       iconActive: '/images/1n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           Existen distintas problemáticas que afectan a algunas empresas u organizaciones y que las impulsan a requerir procesos de cambio para poder revertirlas. Es común observar serias dificultades a la hora de gestionar las diversas instancias de la empresa. Solo  a modo de ejemplo:  alto nivel de conflictividad entre los colaboradores, imposibilidad de delegar, bajos rindes globales, lentitud de respuestas al entorno, pérdida de claridad de los objetivos.
           <br /><br />
           Lideramos los cambios necesarios en los sistemas organizacionales por medio de modificaciones en la 
@@ -33,7 +33,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/2.png',
       iconActive: '/images/2n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           Lideramos el proceso de 
           <span className="text-white font-bold text-xl lg:text-2xl"> continuidad intergeneracional  </span>
           de manera constructiva y sostenida en el tiempo con la colaboración de todos los miembros de la familia involucrados.
@@ -53,7 +53,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/3.png',
       iconActive: '/images/3n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           La dinámica interna del mundo de las organizaciones en general y de las empresas en particular, muchas veces puede resultar hostil y problemática. Gestionar una empresa y conducir a otras personas requiere cualidades personales vinculadas a la formación y a herramientas específicas. Atendemos esas demandas y damos soluciones operativas y concretas.
           <br /><br />
           <span className="text-white font-bold text-xl lg:text-2xl italic"> Propiciamos el camino para que cada uno sea la mejor versión de sí. </span>
@@ -65,7 +65,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/4.png',
       iconActive: '/images/4n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           La gestión de los colaboradores resulta una importante fuente de estrés laboral y de baja en la productividad. Contar o no con el área de RR.HH. resulta determinante para revertir esos efectos. Nuestro aporte consiste en intervenir en la construcción y desarrollo del área, con diversos modelos y acorde a las dimensiones de la empresa.
           <br /><br />
           <span className="text-white font-bold text-xl lg:text-2xl italic"> Armar la estructura y definir las funciones del área de recursos humanos, constituye una prioridad para las empresas de hoy.</span>
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/5.png',
       iconActive: '/images/5n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           Creamos las condiciones necesarias para la inclusión de 
           <span className="text-white font-bold text-xl lg:text-2xl"> nuevos talentos </span>
           que agreguen valor a la organización. Entrevistamos, evaluamos y seleccionamos mandos medios y gerenciales de manera profesional, con el fin de que el perfil del candidato se ajuste al rol que la empresa necesita.
@@ -91,7 +91,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/6.png',
       iconActive: '/images/6n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           Una organización abierta al aprendizaje continuo, es una organización preparada para ser eficiente y, al mismo tiempo, hacerle frente a cualquier cambio que el contexto proponga.
           <br /><br />
           <span className="text-white font-bold text-xl lg:text-2xl italic"> Tener talentos en nuestra organización nos acerca a ser mejores, pero si a eso le sumamos el valor del aprendizaje continuo, nos transformamos en especiales. </span>
@@ -103,7 +103,7 @@ const Services: React.FC = () => {
       iconInactive: '/images/7.png',
       iconActive: '/images/7n.png',
       content: (
-        <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[35px] px-10 mb-5 z-40">
+        <p className="text-white text-center font-normal md:leading-[35px] px-10 mb-5 z-40">
           Acompañamos los procesos que permiten la conformación o mejora de las áreas de 
           <span className="text-white font-bold text-xl lg:text-2xl"> comercialización, </span>
           a través de la generación de pensamiento estratégico y delineando los roles que ocupan las personas que las integran. 
