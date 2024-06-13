@@ -13,13 +13,13 @@ import FadeInFromTop from './animations/fadeInFromTop';
 const Hero = () => {
   return (
     <div className='bg-[#143241]'>
-      <div className='md:py-7 xl:px-0 md:px-12 relative max-w-[1200px] mx-auto'>
+      <div className='p-4 md:py-7 xl:px-0 md:px-[4rem] relative max-w-[1200px] mx-auto'>
         <div className="relative">
           <Swiper
             effect={'fade'}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 400000,
               disableOnInteraction: false,
             }}
             pagination={{
@@ -40,7 +40,7 @@ const Hero = () => {
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-left',
                 bgPosition: "70%",
-                maxWidth: "max-w-[55%] sm:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%]",
+                maxWidth: "max-w-[70%] sm:max-w-[50%] md:max-w-[52%] lg:max-w-[40%]",
               },
               {
                 large: '/images/banner2.png',
@@ -52,7 +52,7 @@ const Hero = () => {
                 translate: '-translate-x-1/2 translate-y-0',
                 align: 'text-center',
                 bgPosition: "left",
-                maxWidth: "max-w-[55%] sm:max-w-[50%] lg:max-w-[50%] xl:max-w-[40%]",
+                maxWidth: "max-w-[75%] sm:max-w-[55%] md:max-w-[55%] lg:max-w-[40%]",
               },
               {
                 large: '/images/banner3.png',
@@ -64,7 +64,7 @@ const Hero = () => {
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-right',
                 bgPosition: "right",
-                maxWidth: "max-w-[70%] sm:max-w-[75%] lg:max-w-[70%] xl:max-w-[65%]",
+                maxWidth: "max-w-[90%] sm:max-w-[75%] md:max-w-[85%] lg:max-w-[55%]",
               },
             ].map((slide, index) => (
               <SwiperSlide key={index}
@@ -96,8 +96,10 @@ const Hero = () => {
 
                 <div className={`absolute ${slide.position} ${slide.translate} z-20 w-11/12 text-center md:text-left ${slide.maxWidth}`}>
                   <FadeInFromTop>
-                    <h1 className={`text-white ${slide.align} text-3xl sm:text-4xl md:text-5xl bg-[#143241] p-3 justify-center`}>
-                      {slide.text}<span className="italic font-[700] inline-block">{slide.highlightedText}</span>{slide.restText}
+                    <h1 className={`text-white inline-block ${slide.align} text-3xl sm:text-3xl md:text-4xl bg-[#143241] p-3 justify-center`}>
+                      {slide.text}
+                      <span className="italic font-[700]">{slide.highlightedText}</span>
+                      {slide.restText}
                     </h1>
                   </FadeInFromTop>
                 </div>
