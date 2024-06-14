@@ -66,7 +66,7 @@ const SocialMediaButtons: React.FC = () => {
             <FaInstagram style={coloredIconStyle} />
           </a>
 
-          <a href="https://instagram.com/giardelligonzalez?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@GiardelliGonzalez" target="_blank" rel="noopener noreferrer">
             <FaYoutube style={coloredIconStyle} />
           </a>
         </div>

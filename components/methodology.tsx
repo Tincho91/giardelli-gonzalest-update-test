@@ -18,7 +18,7 @@ const Methodology = () => {
           <div className="md:col-start-1 md:col-end-2 flex flex-col items-center md:items-start mb-4 md:mb-0">
             <p className="text-white text-center font-normal text-md lg:text-xl md:leading-[20px] lg:leading-[30px] px-1 md:px-5 mb-5 z-40">
               El trabajo de la consultora comienza con una entrevista de 
-              <span className="text-white font-bold text-xl lg:text-2xl"> mutuo conocimiento</span> 
+              <span className="text-white font-bold text-xl lg:text-2xl"> mutuo conocimiento </span> 
               en la que evaluamos la pertinencia de un futuro trabajo conjunto y sus diferentes 
               <span className="text-white font-bold text-xl lg:text-2xl"> instancias posibles de intervención. </span><br />
               A partir de esa definición inicial, profundizamos el conocimiento de la organización llevando a cabo un 

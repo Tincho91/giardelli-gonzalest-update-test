@@ -19,7 +19,7 @@ const Hero = () => {
             effect={'fade'}
             loop={true}
             autoplay={{
-              delay: 400000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             pagination={{

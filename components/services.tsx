@@ -43,8 +43,7 @@ const Services: React.FC = () => {
           Un proceso de traspaso generacional implica, a la vez, 
           <span className="text-white font-black text-xl lg:text-2xl"> un cambio paulatino de actores </span>
           como un
-          <span className="text-white font-black text-xl lg:text-2xl"> plan de profesionalización y mejora de los sistemas </span>
-          . Ambos procesos se potencian propiciando una nueva empresa con un nuevo futuro por delante. 
+          <span className="text-white font-black text-xl lg:text-2xl"> plan de profesionalización y mejora de los sistemas</span>. Ambos procesos se potencian propiciando una nueva empresa con un nuevo futuro por delante. 
         </p>
       )
     },
