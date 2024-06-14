@@ -13,13 +13,13 @@ import FadeInFromTop from './animations/fadeInFromTop';
 const Hero = () => {
   return (
     <div className='bg-[#143241]'>
-      <div className='p-4 md:py-7 xl:px-0 md:px-[4rem] relative max-w-[1200px] mx-auto'>
+      <div className='p-4 sm:py-7 xl:px-0 sm:px-[3rem] relative max-w-[1200px] mx-auto'>
         <div className="relative">
           <Swiper
             effect={'fade'}
             loop={true}
             autoplay={{
-              delay: 400000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             pagination={{
