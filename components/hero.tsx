@@ -19,7 +19,7 @@ const Hero = () => {
             effect={'fade'}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 400000,
               disableOnInteraction: false,
             }}
             pagination={{
@@ -39,19 +39,19 @@ const Hero = () => {
                 position: 'bottom-10 left-0 md:top-10',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-left',
-                bgPosition: "70%",
+                bgPosition: "right top",
                 maxWidth: "max-w-[70%] sm:max-w-[50%] md:max-w-[52%] lg:max-w-[40%]",
               },
               {
                 large: '/images/banner2.png',
-                small: '/images/banner2s.png',
+                small: '/images/banner2.png',
                 text: 'Consultoría ',
                 highlightedText: 'profesional',
                 restText: ' para organizaciones',
                 position: 'bottom-0 left-1/2',
                 translate: '-translate-x-1/2 translate-y-0',
                 align: 'text-center',
-                bgPosition: "left",
+                bgPosition: "left bottom",
                 maxWidth: "max-w-[75%] sm:max-w-[55%] md:max-w-[55%] lg:max-w-[40%]",
               },
               {
@@ -63,7 +63,7 @@ const Hero = () => {
                 position: 'bottom-10 right-0',
                 translate: '-translate-x-0 translate-y-0',
                 align: 'text-right',
-                bgPosition: "right",
+                bgPosition: "right top",
                 maxWidth: "max-w-[90%] sm:max-w-[75%] md:max-w-[85%] lg:max-w-[55%]",
               },
             ].map((slide, index) => (
@@ -78,9 +78,10 @@ const Hero = () => {
                 }}
               >
                 <div
-                  className="sm:hidden absolute inset-0 bg-cover"
+                  className={`sm:hidden absolute inset-0 bg-cover`}
                   style={{ 
                     backgroundImage: `url('${slide.small}')`,
+                    backgroundPosition: slide.bgPosition
                   }}
                 >
                   {/* Small screen image */}
