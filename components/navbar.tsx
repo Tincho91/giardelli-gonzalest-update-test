@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="relative flex h-16 items-center justify-between">
           <div className="flex md:hidden lg:flex lg:ml-0 gap-x-2">
             <Link href="/">
-              <img src="/brand.png" alt="CONSULTORA" className="h-9 sm:h-10 w-full object-contain" />
+              <img src="/brand.png" alt="CONSULTORA" className="h-10 sm:h-11 w-full object-contain" />
             </Link>
           </div>
           <div className="lg:ml-0 gap-x-2 hidden md:flex lg:hidden">
